@@ -1,498 +1,997 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Irlandi & Fernando | Nuestra Boda</title>
 
+
+<!-- =========================================
+     TIPOGRAFÍAS
+========================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
 <style>
 
 :root {
+
     --terracota: #B65F4A;
+
     --terracota-oscuro: #914735;
+
     --olivo: #6F7650;
+
     --olivo-oscuro: #555C3D;
+
     --crema: #F5F0E6;
+
     --beige: #E8DFCF;
+
     --cafe: #302820;
+
     --blanco: #FFFFFF;
+
 }
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
 
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family: "Montserrat", sans-serif;
+
     background: var(--crema);
+
     color: var(--cafe);
+
     line-height: 1.7;
+
 }
+
 
 a {
+
     text-decoration: none;
+
 }
 
 
-/* ================================
+/* =========================================
    PORTADA
-================================ */
+========================================= */
 
 .portada {
+
     min-height: 100vh;
+
     position: relative;
+
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
+
     padding: 35px;
+
     overflow: hidden;
 
     background:
+
         linear-gradient(
+
             rgba(48,40,32,0.42),
+
             rgba(48,40,32,0.55)
+
         ),
+
         url("foto1.jpg")
+
         center/cover no-repeat;
 
     color: var(--blanco);
+
 }
+
 
 .portada::after {
+
     content: "";
+
     position: absolute;
+
     inset: 18px;
+
     border: 1px solid rgba(255,255,255,0.65);
+
     pointer-events: none;
+
 }
+
 
 .portada-contenido {
+
     position: relative;
+
     z-index: 2;
+
 }
+
 
 .portada .pequeno {
-    font-size: 15px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
     letter-spacing: 5px;
+
     text-transform: uppercase;
+
 }
+
 
 .portada h1 {
-    font-size: 58px;
-    font-weight: normal;
-    letter-spacing: 4px;
-    margin: 20px 0;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 82px;
+
+    font-weight: 400;
+
+    margin: 18px 0;
+
 }
+
 
 .portada .fecha {
-    font-size: 21px;
-    letter-spacing: 3px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
 }
+
 
 .boton {
+
     display: inline-block;
+
     margin-top: 35px;
+
     padding: 14px 32px;
+
     background: var(--terracota);
+
     color: var(--blanco);
-    border: 1px solid var(--blanco);
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
     letter-spacing: 2px;
+
     transition: 0.3s;
+
 }
+
 
 .boton:hover {
+
     background: var(--terracota-oscuro);
+
 }
 
 
-/* ================================
+/* =========================================
    SECCIONES
-================================ */
+========================================= */
 
 section {
+
     max-width: 950px;
+
     margin: auto;
-    padding: 80px 25px;
+
+    padding: 85px 25px;
+
     text-align: center;
+
 }
+
 
 .titulo {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--olivo-oscuro);
-    font-size: 35px;
-    font-weight: normal;
-    margin-bottom: 15px;
+
+    font-size: 43px;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+
 }
+
 
 .subtitulo {
+
+    font-family: "Montserrat", sans-serif;
+
     color: var(--terracota);
-    letter-spacing: 2px;
+
+    letter-spacing: 3px;
+
     text-transform: uppercase;
-    font-size: 14px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
 }
+
 
 .adorno {
+
     color: var(--terracota);
+
     font-size: 27px;
+
     margin: 15px;
+
 }
 
 
-/* ================================
+/* =========================================
+   TEXTO GENERAL
+========================================= */
+
+p {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+}
+
+
+strong {
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
    FOTOGRAFÍAS ENTRE SECCIONES
-================================ */
+========================================= */
 
 .foto-separadora {
+
     height: 55vh;
+
     min-height: 350px;
+
     max-width: none;
+
     padding: 0;
 
     background-position: center;
+
     background-size: cover;
+
     background-repeat: no-repeat;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     position: relative;
+
 }
+
 
 .foto-separadora::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     background: rgba(48,40,32,0.30);
+
 }
 
+
 .foto-texto {
+
     position: relative;
+
     z-index: 2;
 
     color: var(--blanco);
 
-    font-size: 32px;
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 37px;
+
     letter-spacing: 2px;
 
     padding: 20px 30px;
 
     border: 1px solid rgba(255,255,255,0.7);
+
 }
 
 
-/* ================================
+/* =========================================
    CUENTA REGRESIVA
-================================ */
+========================================= */
 
 .contador {
+
     display: flex;
+
     justify-content: center;
+
     gap: 18px;
+
     flex-wrap: wrap;
-    margin-top: 35px;
+
+    margin-top: 40px;
+
 }
+
 
 .contador div {
+
     background: var(--blanco);
+
     border-top: 3px solid var(--terracota);
+
     padding: 20px 25px;
+
     min-width: 100px;
-    box-shadow: 0 6px 20px rgba(48,40,32,0.08);
+
+    box-shadow:
+
+        0 6px 20px rgba(48,40,32,0.08);
+
 }
+
 
 .contador span {
+
     display: block;
-    font-size: 32px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
     color: var(--olivo-oscuro);
+
 }
+
 
 .contador small {
+
+    font-family: "Montserrat", sans-serif;
+
     color: var(--terracota);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
 }
 
 
-/* ================================
+/* =========================================
    TARJETAS
-================================ */
+========================================= */
 
 .tarjeta {
+
     background: var(--blanco);
+
     margin-top: 35px;
+
     padding: 40px;
+
     border-top: 4px solid var(--terracota);
-    box-shadow: 0 8px 25px rgba(48,40,32,0.09);
+
+    box-shadow:
+
+        0 8px 25px rgba(48,40,32,0.09);
+
 }
+
 
 .tarjeta h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--terracota);
-    font-size: 25px;
-    font-weight: normal;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
     margin-bottom: 10px;
+
 }
+
 
 .hora {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--olivo-oscuro);
-    font-size: 22px;
+
+    font-size: 28px;
+
 }
 
 
-/* ================================
-   BOTÓN MAPA
-================================ */
+/* =========================================
+   BOTÓN OLIVO
+========================================= */
 
 .boton-olivo {
+
     display: inline-block;
+
     margin-top: 25px;
+
     padding: 13px 28px;
+
     background: var(--olivo);
+
     color: var(--blanco);
-    letter-spacing: 1px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
     transition: 0.3s;
+
 }
+
 
 .boton-olivo:hover {
+
     background: var(--olivo-oscuro);
+
 }
 
 
-/* ================================
+/* =========================================
    RECEPCIÓN
-================================ */
+========================================= */
 
 .seccion-olivo {
+
     max-width: none;
+
     background: var(--olivo);
+
     color: var(--blanco);
-    padding: 80px 25px;
+
+    padding: 90px 25px;
+
     text-align: center;
+
 }
+
 
 .seccion-olivo .titulo {
+
     color: var(--blanco);
+
 }
+
 
 .seccion-olivo .subtitulo {
+
     color: var(--beige);
+
 }
 
 
-/* ================================
+/* =========================================
    PADRES
-================================ */
+========================================= */
 
 .familia {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns: repeat(2,1fr);
+
     gap: 25px;
-    margin-top: 35px;
+
+    margin-top: 40px;
+
 }
+
 
 .familia .tarjeta {
+
     margin-top: 0;
+
 }
 
 
-/* ================================
-   CORTEJO
-================================ */
+.familia .tarjeta p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+}
+
+
+/* =========================================
+   CORTEJO Y PADRINOS
+========================================= */
 
 .padrinos {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns: repeat(2,1fr);
+
     gap: 22px;
-    margin-top: 40px;
+
+    margin-top: 45px;
+
 }
+
 
 .padrino {
+
     background: var(--blanco);
-    padding: 28px;
+
+    padding: 30px 25px;
+
     border-left: 4px solid var(--olivo);
-    box-shadow: 0 5px 18px rgba(48,40,32,0.07);
+
+    box-shadow:
+
+        0 6px 20px rgba(48,40,32,0.08);
+
+    min-height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: 0.3s;
+
 }
+
+
+.padrino:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 10px 25px rgba(48,40,32,0.12);
+
+}
+
 
 .padrino h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--terracota);
-    font-size: 19px;
-    font-weight: normal;
-    margin-bottom: 10px;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    margin-bottom: 13px;
+
 }
 
 
-/* ================================
+.padrino p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+
+}
+
+
+/* =========================================
    HOTELES
-================================ */
+========================================= */
 
 .hoteles {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3,1fr);
+
     gap: 20px;
+
     margin-top: 40px;
+
 }
+
 
 .hotel {
+
     background: var(--blanco);
-    padding: 30px 20px;
+
+    padding: 32px 20px;
+
     border-top: 4px solid var(--olivo);
-    box-shadow: 0 6px 20px rgba(48,40,32,0.08);
+
+    box-shadow:
+
+        0 6px 20px rgba(48,40,32,0.08);
+
 }
+
 
 .hotel h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--terracota);
-    font-size: 21px;
-    font-weight: normal;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
 }
+
 
 .hotel-boton {
+
     display: inline-block;
+
     margin-top: 20px;
+
     padding: 10px 18px;
+
     background: var(--olivo);
+
     color: var(--blanco);
-    font-size: 13px;
-    letter-spacing: 1px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
 }
 
 
-/* ================================
+/* =========================================
    VESTIMENTA
-================================ */
+========================================= */
 
 .vestimenta {
+
     background: var(--beige);
-    padding: 40px;
+
+    padding: 45px;
+
     margin-top: 35px;
+
 }
+
 
 .vestimenta h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
     color: var(--olivo-oscuro);
-    font-size: 25px;
-    font-weight: normal;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
 }
 
 
-/* ================================
+/* =========================================
    LLUVIA DE SOBRES
-================================ */
+========================================= */
 
 .lluvia {
+
     background: var(--blanco);
-    padding: 40px;
+
+    padding: 45px;
+
     margin-top: 35px;
+
     border: 1px solid var(--beige);
+
 }
+
 
 .lluvia .sobre {
+
     font-size: 55px;
+
     color: var(--terracota);
+
     margin-bottom: 15px;
+
 }
 
 
-/* ================================
-   SECCIONES PENDIENTES
-================================ */
+.lluvia p {
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================
+   PENDIENTES
+========================================= */
 
 .pendiente {
+
     background: var(--beige);
+
     padding: 35px;
+
     margin-top: 30px;
+
     border-left: 4px solid var(--olivo);
+
 }
+
 
 .pendiente strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
     color: var(--terracota);
+
 }
 
 
-/* ================================
-   CIERRE
-================================ */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
+
     background: var(--cafe);
+
     color: var(--crema);
+
     text-align: center;
-    padding: 70px 25px;
+
+    padding: 75px 25px;
+
 }
+
 
 footer .nombres {
+
+    font-family: "Great Vibes", cursive;
+
     color: var(--terracota);
-    font-size: 30px;
-    letter-spacing: 3px;
+
+    font-size: 55px;
+
     margin-bottom: 15px;
+
 }
 
 
-/* ================================
-   CELULAR
-================================ */
+footer p {
 
-@media (max-width: 700px) {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width:700px) {
 
     .portada h1 {
-        font-size: 40px;
+
+        font-size: 58px;
+
     }
 
     .portada .fecha {
-        font-size: 17px;
+
+        font-size: 20px;
+
     }
 
     .titulo {
-        font-size: 29px;
+
+        font-size: 36px;
+
     }
 
     .familia,
+
     .padrinos,
+
     .hoteles {
+
         grid-template-columns: 1fr;
+
     }
 
     .contador {
+
         gap: 10px;
+
     }
 
     .contador div {
-        min-width: 75px;
+
+        min-width: 72px;
+
         padding: 15px;
+
     }
 
     .contador span {
-        font-size: 25px;
+
+        font-size: 30px;
+
     }
 
     .tarjeta {
+
         padding: 30px 20px;
+
     }
 
     .foto-separadora {
+
         height: 48vh;
+
         min-height: 300px;
+
     }
 
     .foto-texto {
-        font-size: 25px;
+
+        font-size: 29px;
+
     }
+
+    .padrino {
+
+        min-height: 160px;
+
+    }
+
+    .padrino h3 {
+
+        font-size: 24px;
+
+    }
+
+    .padrino p {
+
+        font-size: 21px;
+
+    }
+
+}
+
+
+/* =========================================
+   ANIMACIÓN SUAVE
+========================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.portada-contenido {
+
+    animation: aparecer 1.5s ease;
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
 <!-- ======================================
      PORTADA
-     
-     FOTO 1 = FOTO PRINCIPAL DE LOS NOVIOS
 ====================================== -->
 
 <header class="portada">
@@ -526,7 +1025,9 @@ footer .nombres {
 
 <section id="invitacion">
 
-    <div class="adorno">✦</div>
+    <div class="adorno">
+        ✦
+    </div>
 
     <div class="subtitulo">
         Con mucha alegría
@@ -550,7 +1051,7 @@ footer .nombres {
 
 <section
     class="foto-separadora"
-    style="background-image: url('foto2.jpg');">
+    style="background-image:url('foto2.jpg');">
 
     <div class="foto-texto">
         Un día para recordar
@@ -614,6 +1115,7 @@ footer .nombres {
         Nuestra celebración
     </h2>
 
+
     <div class="tarjeta">
 
         <h3>
@@ -645,7 +1147,9 @@ footer .nombres {
             href="https://maps.app.goo.gl/JJyNm5Zxw2pmKaM3A?g_st=ic"
             target="_blank"
             class="boton-olivo">
+
             VER UBICACIÓN
+
         </a>
 
     </div>
@@ -659,7 +1163,7 @@ footer .nombres {
 
 <section
     class="foto-separadora"
-    style="background-image: url('foto3.jpg');">
+    style="background-image:url('foto3.jpg');">
 
     <div class="foto-texto">
         El comienzo de una nueva etapa
@@ -699,7 +1203,7 @@ footer .nombres {
 
 <section
     class="foto-separadora"
-    style="background-image: url('foto4.jpg');">
+    style="background-image:url('foto4.jpg');">
 
     <div class="foto-texto">
         Juntos en este día
@@ -722,7 +1226,9 @@ footer .nombres {
         Nuestros padres
     </h2>
 
+
     <div class="familia">
+
 
         <div class="tarjeta">
 
@@ -740,6 +1246,7 @@ footer .nombres {
 
         </div>
 
+
         <div class="tarjeta">
 
             <h3>
@@ -755,6 +1262,7 @@ footer .nombres {
             </p>
 
         </div>
+
 
     </div>
 
@@ -785,128 +1293,201 @@ footer .nombres {
 
 
         <div class="padrino">
-            <h3>Padrinos de velación</h3>
+
+            <h3>
+                Padrinos de velación
+            </h3>
+
             <p>
                 Norma Alicia Mendoza Moreno
-                <br>&
+                <br>
+                &
                 <br>
                 Eduardo Navarrete Árciga
             </p>
+
         </div>
 
 
-        <div class="padrinos">
-            <h3>Madrina de anillos</h3>
+        <div class="padrino">
+
+            <h3>
+                Madrina de anillos
+            </h3>
+
             <p>
                 Patricia Martínez Huerta
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Padrinos de arras</h3>
+
+            <h3>
+                Padrinos de arras
+            </h3>
+
             <p>
                 Paula Espinoza Arellano
-                <br>&
+                <br>
+                &
                 <br>
                 Daniel Navarrete Mendoza
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Padrinos de lazo</h3>
+
+            <h3>
+                Padrinos de lazo
+            </h3>
+
             <p>
                 Magalli Alvarez Martínez
-                <br>&
+                <br>
+                &
                 <br>
                 Daniel Navarrete Mendoza
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Madrina de Biblia y Rosario</h3>
+
+            <h3>
+                Madrina de Biblia y Rosario
+            </h3>
+
             <p>
                 María Elena Corona Jacinto
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Padrinos de Medalla</h3>
+
+            <h3>
+                Padrinos de Medalla
+            </h3>
+
             <p>
                 Claudia Alvarez Corona
-                <br>&
+                <br>
+                &
                 <br>
                 Marco Antonio Moreno Huerta
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Padrinos de copas</h3>
+
+            <h3>
+                Padrinos de copas
+            </h3>
+
             <p>
                 Magalli Alvarez Martínez
-                <br>&
+                <br>
+                &
                 <br>
                 Nallely Gómez Vázquez
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Padrino de pastel</h3>
+
+            <h3>
+                Padrino de pastel
+            </h3>
+
             <p>
                 Marcos Mendoza Moreno
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Madrina de zapatillas</h3>
+
+            <h3>
+                Madrina de zapatillas
+            </h3>
+
             <p>
                 Alison Melanie Moreno Alvarez
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Madrinas de foto y video</h3>
+
+            <h3>
+                Madrinas de foto y video
+            </h3>
+
             <p>
                 Margarita Sánchez Huerta
-                <br>&
+                <br>
+                &
                 <br>
                 María de la Luz Huerta Aviles
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Madrinas de ramo</h3>
+
+            <h3>
+                Madrinas de ramo
+            </h3>
+
             <p>
                 Janet Martínez García
-                <br>&
+                <br>
+                &
                 <br>
                 Mariana Molina Barranco
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Damas de honor</h3>
+
+            <h3>
+                Damas de honor
+            </h3>
+
             <p>
                 Próximamente
             </p>
+
         </div>
 
 
         <div class="padrino">
-            <h3>Caballeros</h3>
+
+            <h3>
+                Caballeros
+            </h3>
+
             <p>
                 Próximamente
             </p>
+
         </div>
+
 
     </div>
 
@@ -919,7 +1500,7 @@ footer .nombres {
 
 <section
     class="foto-separadora"
-    style="background-image: url('foto5.jpg');">
+    style="background-image:url('foto5.jpg');">
 
     <div class="foto-texto">
         Gracias por acompañarnos
@@ -950,6 +1531,7 @@ footer .nombres {
 
     <div class="hoteles">
 
+
         <div class="hotel">
 
             <h3>
@@ -960,7 +1542,9 @@ footer .nombres {
                 href="https://www.hotelesborda.mx/"
                 target="_blank"
                 class="hotel-boton">
+
                 VER HOTEL
+
             </a>
 
         </div>
@@ -976,7 +1560,9 @@ footer .nombres {
                 href="https://share.google/gHRKZmuS0vHIDyZsd"
                 target="_blank"
                 class="hotel-boton">
+
                 VER HOTEL
+
             </a>
 
         </div>
@@ -992,10 +1578,13 @@ footer .nombres {
                 href="https://maps.app.goo.gl/Vd6BwfgVb9rV4FXz6?g_st=aw"
                 target="_blank"
                 class="hotel-boton">
+
                 VER UBICACIÓN
+
             </a>
 
         </div>
+
 
     </div>
 
@@ -1016,6 +1605,7 @@ footer .nombres {
         De etiqueta en jardín
     </h2>
 
+
     <div class="vestimenta">
 
         <h3>
@@ -1025,11 +1615,21 @@ footer .nombres {
         <br>
 
         <p>
+
             Les pedimos reservar el color
-            <strong>marrón</strong>
+
+            <strong>
+                marrón
+            </strong>
+
             para las damas y el color
-            <strong>blanco</strong>
+
+            <strong>
+                blanco
+            </strong>
+
             exclusivamente para la novia.
+
         </p>
 
     </div>
@@ -1051,6 +1651,7 @@ footer .nombres {
         Lluvia de sobres
     </h2>
 
+
     <div class="lluvia">
 
         <div class="sobre">
@@ -1058,9 +1659,11 @@ footer .nombres {
         </div>
 
         <p>
+
             <strong>
                 Sugerencia de regalo:
             </strong>
+
         </p>
 
         <p>
@@ -1070,9 +1673,11 @@ footer .nombres {
         <br>
 
         <p>
+
             <strong>
                 ¡No te preocupes!
             </strong>
+
         </p>
 
         <p>
@@ -1091,7 +1696,7 @@ footer .nombres {
 
 <section
     class="foto-separadora"
-    style="background-image: url('foto6.jpg');">
+    style="background-image:url('foto6.jpg');">
 
     <div class="foto-texto">
         Con cariño, Irlandi & Fernando
@@ -1113,6 +1718,7 @@ footer .nombres {
     <h2 class="titulo">
         Álbum de invitados
     </h2>
+
 
     <div class="pendiente">
 
@@ -1145,6 +1751,7 @@ footer .nombres {
     <h2 class="titulo">
         Confirmación de asistencia
     </h2>
+
 
     <div class="pendiente">
 
@@ -1197,49 +1804,87 @@ footer .nombres {
 const fechaBoda =
     new Date("December 5, 2026 16:00:00").getTime();
 
+
 function actualizarContador() {
 
-    const ahora = new Date().getTime();
+    const ahora =
+        new Date().getTime();
 
-    const diferencia = fechaBoda - ahora;
+    const diferencia =
+        fechaBoda - ahora;
+
 
     if (diferencia <= 0) {
 
         document.getElementById("dias").textContent = "0";
+
         document.getElementById("horas").textContent = "0";
+
         document.getElementById("minutos").textContent = "0";
+
         document.getElementById("segundos").textContent = "0";
 
         return;
+
     }
 
-    const dias = Math.floor(
-        diferencia / (1000 * 60 * 60 * 24)
-    );
 
-    const horas = Math.floor(
-        (diferencia / (1000 * 60 * 60)) % 24
-    );
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
+        );
 
-    const minutos = Math.floor(
-        (diferencia / (1000 * 60)) % 60
-    );
 
-    const segundos = Math.floor(
-        (diferencia / 1000) % 60
-    );
+    const horas =
+        Math.floor(
+            (diferencia /
+            (1000 * 60 * 60)) % 24
+        );
 
-    document.getElementById("dias").textContent = dias;
-    document.getElementById("horas").textContent = horas;
-    document.getElementById("minutos").textContent = minutos;
-    document.getElementById("segundos").textContent = segundos;
+
+    const minutos =
+        Math.floor(
+            (diferencia /
+            (1000 * 60)) % 60
+        );
+
+
+    const segundos =
+        Math.floor(
+            (diferencia / 1000) % 60
+        );
+
+
+    document.getElementById("dias").textContent =
+        dias;
+
+
+    document.getElementById("horas").textContent =
+        horas;
+
+
+    document.getElementById("minutos").textContent =
+        minutos;
+
+
+    document.getElementById("segundos").textContent =
+        segundos;
+
 }
+
 
 actualizarContador();
 
-setInterval(actualizarContador, 1000);
+
+setInterval(
+    actualizarContador,
+    1000
+);
 
 </script>
 
+
 </body>
+
 </html>
