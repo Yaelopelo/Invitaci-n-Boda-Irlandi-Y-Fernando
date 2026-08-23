@@ -63,7 +63,6 @@ a {
     text-decoration: none;
 }
 
-
 /* =========================
    MUSICA
 ========================= */
@@ -135,7 +134,6 @@ a {
 
 .boton {
     display: inline-block;
-
     margin-top: 38px;
     padding: 14px 34px;
 
@@ -172,7 +170,6 @@ section {
 
 .subtitulo {
     font-family: "Montserrat", sans-serif;
-
     color: var(--terracota);
 
     font-size: 10px;
@@ -186,7 +183,6 @@ section {
 
 .titulo {
     font-family: "Cormorant Garamond", serif;
-
     color: var(--olivo-dark);
 
     font-size: 49px;
@@ -206,13 +202,11 @@ section {
 
 .titulo::after {
     content: "❧";
-
     display: block;
 
     color: var(--terracota);
 
     font-family: "Cormorant Garamond", serif;
-
     font-size: 24px;
 
     margin-top: 12px;
@@ -261,7 +255,6 @@ section {
     color: white;
 
     font-family: "Great Vibes", cursive;
-
     font-size: 54px;
 
     text-shadow:
@@ -281,11 +274,8 @@ section {
 .contador {
     display: flex;
     justify-content: center;
-
     gap: 16px;
-
     flex-wrap: wrap;
-
     margin-top: 45px;
 }
 
@@ -306,7 +296,6 @@ section {
     display: block;
 
     font-family: "Playfair Display", serif;
-
     color: var(--olivo-dark);
 
     font-size: 34px;
@@ -314,13 +303,10 @@ section {
 
 .contador small {
     font-family: "Montserrat", sans-serif;
-
     color: var(--terracota);
 
     font-size: 9px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
 }
 
@@ -378,11 +364,9 @@ section {
     font-family: "Montserrat", sans-serif;
 
     font-size: 9px;
-
     font-weight: 600;
 
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
     transition: .3s;
@@ -618,7 +602,7 @@ section {
 
 
 /* =========================
-   SOBRES
+   LLUVIA DE SOBRES
 ========================= */
 
 .lluvia {
@@ -650,16 +634,11 @@ section {
 
 
 /* =========================
-   ALBUM DE INVITADOS
+   ALBUM GOOGLE FOTOS
 ========================= */
 
 .album {
-    background:
-        linear-gradient(
-            135deg,
-            var(--beige-light),
-            var(--crema)
-        );
+    background: white;
 
     padding: 50px 30px;
 
@@ -670,35 +649,21 @@ section {
     border-top: 5px solid var(--olivo);
 
     box-shadow:
-        0 10px 30px rgba(58,44,36,.08);
+        0 10px 30px rgba(58,44,36,.07);
 }
 
-.album-icono {
-    font-size: 55px;
+.album .icono {
+    font-size: 52px;
 
     color: var(--terracota);
 
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .album strong {
     font-family: "Playfair Display", serif;
 
     font-size: 19px;
-
-    color: var(--terracota-dark);
-}
-
-.album p {
-    max-width: 650px;
-
-    margin: 8px auto;
-
-    font-family: "Lora", serif;
-
-    color: var(--cafe-light);
-
-    font-size: 16px;
 }
 
 .boton-album {
@@ -706,7 +671,7 @@ section {
 
     margin-top: 28px;
 
-    padding: 16px 35px;
+    padding: 15px 34px;
 
     background: var(--olivo);
 
@@ -725,7 +690,7 @@ section {
     text-transform: uppercase;
 
     box-shadow:
-        0 8px 20px rgba(82,90,61,.20);
+        0 8px 20px rgba(82,90,61,.18);
 
     transition: .3s;
 }
@@ -734,9 +699,91 @@ section {
     background: var(--olivo-dark);
 
     transform: translateY(-3px);
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    background:
+        linear-gradient(
+            135deg,
+            var(--beige-light),
+            var(--crema)
+        );
+
+    padding: 50px 30px;
+
+    margin-top: 35px;
+
+    border: 1px solid var(--beige);
+
+    border-top: 5px solid var(--terracota);
 
     box-shadow:
-        0 12px 25px rgba(82,90,61,.25);
+        0 10px 30px rgba(58,44,36,.08);
+}
+
+.whatsapp .icono {
+    font-size: 48px;
+
+    color: var(--terracota);
+
+    margin-bottom: 12px;
+}
+
+.whatsapp p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-family: "Lora", serif;
+
+    color: var(--cafe-light);
+
+    font-size: 17px;
+}
+
+.botones-whatsapp {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: var(--olivo);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: .3s;
+}
+
+.boton-whatsapp:hover {
+    background: var(--olivo-dark);
+
+    transform: translateY(-3px);
 }
 
 
@@ -902,6 +949,7 @@ footer p {
 
     .contador div {
         min-width: 72px;
+
         padding: 15px 10px;
     }
 
@@ -917,24 +965,27 @@ footer p {
         font-size: 55px;
     }
 
-    .album {
-        padding: 40px 22px;
-    }
-
-    .boton-album {
-        padding: 15px 25px;
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
-
     .confirmacion {
         padding: 40px 22px;
     }
 
     .boton-confirmacion {
         padding: 15px 25px;
+
         font-size: 10px;
+
         letter-spacing: 2px;
+    }
+
+    .album,
+    .whatsapp {
+        padding: 40px 22px;
+    }
+
+    .boton-album,
+    .boton-whatsapp {
+        width: 100%;
+        max-width: 320px;
     }
 
 }
@@ -947,7 +998,7 @@ footer p {
 
 
 <!-- =========================
-     MUSICA DE FONDO
+     MUSICA
 ========================= -->
 
 <audio
@@ -1244,187 +1295,96 @@ footer p {
     <div class="padrinos">
 
         <div class="padrino">
-
-            <h3>
-                Padrinos de velación
-            </h3>
-
+            <h3>Padrinos de velación</h3>
             <p>
                 Norma Alicia Mendoza Moreno
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Eduardo Navarrete Árciga
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Madrina de anillos
-            </h3>
-
-            <p>
-                Patricia Martínez Huerta
-            </p>
-
+            <h3>Madrina de anillos</h3>
+            <p>Patricia Martínez Huerta</p>
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Padrinos de arras
-            </h3>
-
+            <h3>Padrinos de arras</h3>
             <p>
                 Paula Espinoza Arellano
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Daniel Navarrete Mendoza
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Padrinos de lazo
-            </h3>
-
+            <h3>Padrinos de lazo</h3>
             <p>
                 Magalli Alvarez Martínez
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Daniel Navarrete Mendoza
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Madrina de Biblia y Rosario
-            </h3>
-
-            <p>
-                María Elena Corona Jacinto
-            </p>
-
+            <h3>Madrina de Biblia y Rosario</h3>
+            <p>María Elena Corona Jacinto</p>
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Padrinos de medalla
-            </h3>
-
+            <h3>Padrinos de medalla</h3>
             <p>
                 Claudia Alvarez Corona
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Marco Antonio Moreno Huerta
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Padrinos de copas
-            </h3>
-
+            <h3>Padrinos de copas</h3>
             <p>
                 Magalli Alvarez Martínez
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Nallely Gómez Vázquez
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Padrino de pastel
-            </h3>
-
-            <p>
-                Marcos Mendoza Moreno
-            </p>
-
+            <h3>Padrino de pastel</h3>
+            <p>Marcos Mendoza Moreno</p>
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Madrina de zapatillas
-            </h3>
-
-            <p>
-                Alison Melanie Moreno Alvarez
-            </p>
-
+            <h3>Madrina de zapatillas</h3>
+            <p>Alison Melanie Moreno Alvarez</p>
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Madrinas de foto y video
-            </h3>
-
+            <h3>Madrinas de foto y video</h3>
             <p>
                 Margarita Sánchez Huerta
-                <br>
-                &
-                <br>
+                <br>&<br>
                 María de la Luz Huerta Aviles
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Madrinas de ramo
-            </h3>
-
+            <h3>Madrinas de ramo</h3>
             <p>
                 Janet Martínez García
-                <br>
-                &
-                <br>
+                <br>&<br>
                 Mariana Molina Barranco
             </p>
-
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Damas de honor
-            </h3>
-
-            <p>
-                Próximamente
-            </p>
-
+            <h3>Damas de honor</h3>
+            <p>Próximamente</p>
         </div>
 
         <div class="padrino">
-
-            <h3>
-                Caballeros
-            </h3>
-
-            <p>
-                Próximamente
-            </p>
-
+            <h3>Caballeros</h3>
+            <p>Próximamente</p>
         </div>
 
     </div>
@@ -1613,7 +1573,7 @@ footer p {
 
 
 <!-- =========================
-     ALBUM DE INVITADOS
+     ALBUM GOOGLE FOTOS
 ========================= -->
 
 <section>
@@ -1628,19 +1588,21 @@ footer p {
 
     <div class="album">
 
-        <div class="album-icono">
-            📸
+        <div class="icono">
+            📷
         </div>
 
         <p>
             <strong>
-                Ayúdanos a llenar nuestro álbum
+                ¡Ayúdanos a llenar nuestro álbum!
             </strong>
         </p>
 
+        <br>
+
         <p>
-            Comparte con nosotros las fotografías
-            que captures durante este día tan especial.
+            Comparte las fotografías que tomes durante
+            nuestra celebración y forma parte de nuestros recuerdos.
         </p>
 
         <a
@@ -1649,9 +1611,64 @@ footer p {
             rel="noopener noreferrer"
             class="boton-album">
 
-            📷 Compartir fotografías
+            Compartir fotografías
 
         </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Estamos para escucharte
+    </div>
+
+    <h2 class="titulo">
+        ¿Quieres decirnos algo?
+    </h2>
+
+    <div class="whatsapp">
+
+        <div class="icono">
+            ✉
+        </div>
+
+        <p>
+            Si tienes algún comentario especial
+            que quieras hacernos llegar,
+            escríbenos por WhatsApp.
+        </p>
+
+        <div class="botones-whatsapp">
+
+            <a
+                href="https://wa.me/525534325116?text=Hola%20Irlandi%20y%20Fernando,%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-whatsapp">
+
+                Escribir a Fernando
+
+            </a>
+
+            <a
+                href="https://wa.me/525514170828?text=Hola%20Irlandi%20y%20Fernando,%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-whatsapp">
+
+                Escribir a Irlandi
+
+            </a>
+
+        </div>
 
     </div>
 
@@ -1701,7 +1718,9 @@ footer p {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1729,9 +1748,8 @@ footer p {
 
 <script>
 
-
 /* =========================
-   MUSICA DE FONDO
+   MUSICA
 ========================= */
 
 const musica =
@@ -1739,7 +1757,6 @@ const musica =
 
 const abrirInvitacion =
     document.getElementById("abrirInvitacion");
-
 
 abrirInvitacion.addEventListener("click", function() {
 
@@ -1765,7 +1782,6 @@ abrirInvitacion.addEventListener("click", function() {
 const fechaBoda =
     new Date("December 5, 2026 16:00:00").getTime();
 
-
 function actualizarContador() {
 
     const ahora =
@@ -1774,21 +1790,15 @@ function actualizarContador() {
     const diferencia =
         fechaBoda - ahora;
 
-
     if (diferencia <= 0) {
 
         document.getElementById("dias").textContent = "0";
-
         document.getElementById("horas").textContent = "0";
-
         document.getElementById("minutos").textContent = "0";
-
         document.getElementById("segundos").textContent = "0";
 
         return;
-
     }
-
 
     const dias =
         Math.floor(
@@ -1796,13 +1806,11 @@ function actualizarContador() {
             (1000 * 60 * 60 * 24)
         );
 
-
     const horas =
         Math.floor(
             (diferencia /
             (1000 * 60 * 60)) % 24
         );
-
 
     const minutos =
         Math.floor(
@@ -1810,12 +1818,10 @@ function actualizarContador() {
             (1000 * 60)) % 60
         );
 
-
     const segundos =
         Math.floor(
             (diferencia / 1000) % 60
         );
-
 
     document.getElementById("dias").textContent =
         dias;
@@ -1828,9 +1834,7 @@ function actualizarContador() {
 
     document.getElementById("segundos").textContent =
         segundos;
-
 }
-
 
 actualizarContador();
 
