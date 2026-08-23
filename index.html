@@ -650,27 +650,93 @@ section {
 
 
 /* =========================
-   PENDIENTES
+   ALBUM DE INVITADOS
 ========================= */
 
-.pendiente {
-    background: var(--beige-light);
+.album {
+    background:
+        linear-gradient(
+            135deg,
+            var(--beige-light),
+            var(--crema)
+        );
 
-    padding: 38px;
+    padding: 50px 30px;
 
-    margin-top: 30px;
+    margin-top: 35px;
 
-    border-left: 4px solid var(--olivo);
+    border: 1px solid var(--beige);
+
+    border-top: 5px solid var(--olivo);
+
+    box-shadow:
+        0 10px 30px rgba(58,44,36,.08);
 }
 
-.pendiente strong {
-    font-family: "Great Vibes", cursive;
+.album-icono {
+    font-size: 55px;
 
     color: var(--terracota);
 
-    font-size: 38px;
+    margin-bottom: 12px;
+}
 
-    font-weight: 400;
+.album strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    color: var(--terracota-dark);
+}
+
+.album p {
+    max-width: 650px;
+
+    margin: 8px auto;
+
+    font-family: "Lora", serif;
+
+    color: var(--cafe-light);
+
+    font-size: 16px;
+}
+
+.boton-album {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding: 16px 35px;
+
+    background: var(--olivo);
+
+    color: white;
+
+    border: 1px solid var(--olivo-dark);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 8px 20px rgba(82,90,61,.20);
+
+    transition: .3s;
+}
+
+.boton-album:hover {
+    background: var(--olivo-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(82,90,61,.25);
 }
 
 
@@ -746,101 +812,6 @@ section {
 
     box-shadow:
         0 12px 25px rgba(145,71,53,.25);
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
-    background:
-        linear-gradient(
-            135deg,
-            var(--beige-light),
-            var(--crema)
-        );
-
-    padding: 55px 30px;
-
-    margin-top: 35px;
-
-    border: 1px solid var(--beige);
-
-    border-top: 5px solid var(--olivo);
-
-    box-shadow:
-        0 10px 30px rgba(58,44,36,.08);
-}
-
-.whatsapp p {
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    font-family: "Lora", serif;
-
-    color: var(--cafe-light);
-
-    font-size: 17px;
-}
-
-.whatsapp-botones {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
-
-    margin-top: 30px;
-}
-
-.boton-whatsapp {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 15px 28px;
-
-    background: var(--olivo);
-
-    color: white;
-
-    border: 1px solid var(--olivo-dark);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    box-shadow:
-        0 8px 20px rgba(82,90,61,.18);
-
-    transition: .3s;
-}
-
-.boton-whatsapp:hover {
-    background: var(--olivo-dark);
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(82,90,61,.25);
-}
-
-.whatsapp-icono {
-    font-size: 17px;
 }
 
 
@@ -946,6 +917,16 @@ footer p {
         font-size: 55px;
     }
 
+    .album {
+        padding: 40px 22px;
+    }
+
+    .boton-album {
+        padding: 15px 25px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
     .confirmacion {
         padding: 40px 22px;
     }
@@ -954,15 +935,6 @@ footer p {
         padding: 15px 25px;
         font-size: 10px;
         letter-spacing: 2px;
-    }
-
-    .whatsapp {
-        padding: 40px 22px;
-    }
-
-    .boton-whatsapp {
-        width: 100%;
-        max-width: 320px;
     }
 
 }
@@ -1640,7 +1612,9 @@ footer p {
 </section>
 
 
-<!-- ALBUM -->
+<!-- =========================
+     ALBUM DE INVITADOS
+========================= -->
 
 <section>
 
@@ -1652,25 +1626,41 @@ footer p {
         Álbum de invitados
     </h2>
 
-    <div class="pendiente">
+    <div class="album">
+
+        <div class="album-icono">
+            📸
+        </div>
 
         <p>
-            Muy pronto podrás compartir tus fotografías
-            favoritas de nuestra celebración.
+            <strong>
+                Ayúdanos a llenar nuestro álbum
+            </strong>
         </p>
 
-        <br>
+        <p>
+            Comparte con nosotros las fotografías
+            que captures durante este día tan especial.
+        </p>
 
-        <strong>
-            #IrlandiYFernando2026
-        </strong>
+        <a
+            href="https://photos.app.goo.gl/HDe2px4fACf7NwXB9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-album">
+
+            📷 Compartir fotografías
+
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- CONFIRMACION -->
+<!-- =========================
+     CONFIRMACION
+========================= -->
 
 <section>
 
@@ -1705,66 +1695,6 @@ footer p {
             Confirmar asistencia
 
         </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
-<section>
-
-    <div class="subtitulo">
-        Estamos para escucharte
-    </div>
-
-    <h2 class="titulo">
-        ¿Tienes algo que decirnos?
-    </h2>
-
-    <div class="whatsapp">
-
-        <p>
-            Si tienes algún comentario especial
-            que quieras hacernos llegar,
-            escríbenos por WhatsApp.
-        </p>
-
-        <div class="whatsapp-botones">
-
-            <a
-                href="https://wa.me/525534325116?text=Hola%2C%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda.%20%F0%9F%92%8D"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="boton-whatsapp">
-
-                <span class="whatsapp-icono">
-                    ✆
-                </span>
-
-                Escribir a Fernando
-
-            </a>
-
-
-            <a
-                href="https://wa.me/525514170828?text=Hola%2C%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda.%20%F0%9F%92%8D"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="boton-whatsapp">
-
-                <span class="whatsapp-icono">
-                    ✆
-                </span>
-
-                Escribir a Irlandi
-
-            </a>
-
-        </div>
 
     </div>
 
@@ -1908,7 +1838,6 @@ setInterval(
     actualizarContador,
     1000
 );
-
 
 </script>
 
