@@ -1,410 +1,1268 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Invitación de Boda</title>
+<title>Irlandi & Fernando | Nuestra Boda</title>
 
-    <style>
+<style>
 
-        /* =========================
-           PALETA DE COLORES
-           ========================= */
+:root {
+    --terracota: #B65F4A;
+    --terracota-oscuro: #914735;
+    --olivo: #6F7650;
+    --olivo-oscuro: #555C3D;
+    --crema: #F5F0E6;
+    --beige: #E8DFCF;
+    --cafe: #302820;
+    --blanco: #FFFFFF;
+}
 
-        :root {
-            --terracota: #B65F4A;
-            --terracota-oscuro: #914735;
-            --olivo: #6F7650;
-            --olivo-oscuro: #555C3D;
-            --crema: #F5F0E6;
-            --beige: #E8DFCF;
-            --cafe: #302820;
-            --blanco: #FFFFFF;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-        /* =========================
-           CONFIGURACIÓN GENERAL
-           ========================= */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--crema);
+    color: var(--cafe);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            rgba(48,40,32,0.55),
+            rgba(48,40,32,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    color: var(--blanco);
+}
+
+.portada .pequeno {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.portada h1 {
+    font-size: 58px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    margin: 20px 0;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+.portada .fecha {
+    font-size: 21px;
+    letter-spacing: 3px;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: var(--crema);
-            color: var(--cafe);
-            text-align: center;
-        }
+.boton {
+    display: inline-block;
 
+    margin-top: 35px;
 
-        /* =========================
-           PORTADA
-           ========================= */
+    padding: 14px 32px;
 
-        .portada {
-            min-height: 100vh;
+    background: var(--terracota);
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    color: var(--blanco);
 
-            padding: 30px;
+    border: 1px solid var(--terracota);
 
-            background:
-                linear-gradient(
-                    rgba(48, 40, 32, 0.48),
-                    rgba(48, 40, 32, 0.48)
-                ),
-                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80")
-                center/cover;
+    letter-spacing: 2px;
 
-            color: var(--blanco);
-        }
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: var(--terracota-oscuro);
+}
 
 
-        .portada h1 {
-            font-size: 52px;
-            font-weight: normal;
+/* =========================
+   SECCIONES
+========================= */
 
-            letter-spacing: 3px;
+section {
+    max-width: 950px;
+    margin: auto;
+    padding: 80px 25px;
+    text-align: center;
+}
 
-            margin-bottom: 15px;
-        }
+.titulo {
+    color: var(--olivo-oscuro);
+    font-size: 35px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
 
+.subtitulo {
+    color: var(--terracota);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
 
-        .portada p {
-            font-size: 20px;
-            letter-spacing: 2px;
+.adorno {
+    color: var(--terracota);
+    font-size: 27px;
+    margin: 15px;
+}
 
-            margin-bottom: 35px;
-        }
 
+/* =========================
+   CUENTA REGRESIVA
+========================= */
 
-        /* =========================
-           BOTONES
-           ========================= */
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
 
-        .boton {
-            display: inline-block;
+.contador div {
+    background: var(--blanco);
+    border-top: 3px solid var(--terracota);
 
-            padding: 14px 30px;
+    padding: 20px 25px;
 
-            border: 1px solid var(--terracota);
+    min-width: 100px;
 
-            background: var(--terracota);
+    box-shadow: 0 6px 20px rgba(48,40,32,0.08);
+}
 
-            color: var(--blanco);
+.contador span {
+    display: block;
+    font-size: 32px;
+    color: var(--olivo-oscuro);
+}
 
-            text-decoration: none;
+.contador small {
+    color: var(--terracota);
+}
 
-            letter-spacing: 2px;
 
-            transition: 0.3s;
+/* =========================
+   EVENTO
+========================= */
 
-            cursor: pointer;
-        }
+.tarjeta {
+    background: var(--blanco);
 
+    margin-top: 35px;
 
-        .boton:hover {
-            background: var(--terracota-oscuro);
+    padding: 40px;
 
-            border-color: var(--terracota-oscuro);
-        }
+    border-top: 4px solid var(--terracota);
 
+    box-shadow:
+        0 8px 25px rgba(48,40,32,0.09);
+}
 
-        /* =========================
-           SECCIONES
-           ========================= */
+.tarjeta h3 {
+    color: var(--terracota);
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
 
-        section {
-            padding: 75px 25px;
+.hora {
+    color: var(--olivo-oscuro);
+    font-size: 22px;
+}
 
-            max-width: 900px;
 
-            margin: auto;
-        }
+/* =========================
+   BOTON MAPA
+========================= */
 
+.boton-olivo {
+    display: inline-block;
 
-        h2 {
-            font-size: 32px;
+    margin-top: 25px;
 
-            font-weight: normal;
+    padding: 13px 28px;
 
-            margin-bottom: 25px;
+    background: var(--olivo);
 
-            color: var(--olivo-oscuro);
-        }
+    color: var(--blanco);
 
+    letter-spacing: 1px;
 
-        .terracota {
-            color: var(--terracota);
-        }
+    transition: 0.3s;
+}
 
+.boton-olivo:hover {
+    background: var(--olivo-oscuro);
+}
 
-        .olivo {
-            color: var(--olivo);
-        }
 
+/* =========================
+   RECEPCIÓN
+========================= */
 
-        /* =========================
-           DETALLES DECORATIVOS
-           ========================= */
+.seccion-olivo {
+    max-width: none;
 
-        .adorno {
-            color: var(--terracota);
+    background: var(--olivo);
 
-            font-size: 24px;
+    color: var(--blanco);
 
-            margin: 15px 0;
-        }
+    padding: 80px 25px;
 
+    text-align: center;
+}
 
-        /* =========================
-           INFORMACIÓN DEL EVENTO
-           ========================= */
+.seccion-olivo .titulo {
+    color: var(--blanco);
+}
 
-        .evento {
-            background: var(--blanco);
+.seccion-olivo .subtitulo {
+    color: var(--beige);
+}
 
-            padding: 40px;
 
-            margin-top: 30px;
+/* =========================
+   FOTOGRAFÍAS
+========================= */
 
-            border-top: 4px solid var(--terracota);
+.fotos {
+    display: grid;
 
-            box-shadow:
-                0 8px 25px rgba(48, 40, 32, 0.10);
-        }
+    grid-template-columns: repeat(2, 1fr);
 
+    gap: 20px;
 
-        .evento h2 {
-            color: var(--terracota);
-        }
+    margin-top: 40px;
+}
 
+.foto-placeholder {
+    min-height: 260px;
 
-        .evento p {
-            line-height: 1.7;
-        }
+    display: flex;
 
+    justify-content: center;
 
-        /* =========================
-           SECCIÓN VERDE OLIVO
-           ========================= */
+    align-items: center;
 
-        .seccion-olivo {
-            background: var(--olivo);
+    background: var(--beige);
 
-            color: var(--blanco);
+    border: 1px solid rgba(111,118,80,0.35);
 
-            max-width: none;
+    color: var(--olivo-oscuro);
 
-            padding: 70px 25px;
-        }
+    font-style: italic;
+}
 
 
-        .seccion-olivo h2 {
-            color: var(--blanco);
-        }
+/* =========================
+   PADRES
+========================= */
 
+.familia {
+    display: grid;
 
-        /* =========================
-           PIE DE PÁGINA
-           ========================= */
+    grid-template-columns: repeat(2, 1fr);
 
-        footer {
-            padding: 55px 20px;
+    gap: 25px;
 
-            background: var(--cafe);
+    margin-top: 35px;
+}
 
-            color: var(--crema);
-        }
+.familia .tarjeta {
+    margin-top: 0;
+}
 
 
-        footer .nombre {
-            color: var(--terracota);
+/* =========================
+   PADRINOS
+========================= */
 
-            font-size: 24px;
+.padrinos {
+    display: grid;
 
-            letter-spacing: 2px;
-        }
+    grid-template-columns: repeat(2, 1fr);
 
+    gap: 22px;
 
-        /* =========================
-           CELULARES
-           ========================= */
+    margin-top: 40px;
+}
 
-        @media (max-width: 600px) {
+.padrino {
+    background: var(--blanco);
 
-            .portada h1 {
-                font-size: 38px;
-            }
+    padding: 28px;
 
-            .portada p {
-                font-size: 17px;
-            }
+    border-left: 4px solid var(--olivo);
 
-            h2 {
-                font-size: 28px;
-            }
+    box-shadow: 0 5px 18px rgba(48,40,32,0.07);
+}
 
-            .evento {
-                padding: 30px 20px;
-            }
-        }
+.padrino h3 {
+    color: var(--terracota);
 
-    </style>
+    font-size: 19px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.padrino p {
+    color: var(--cafe);
+}
+
+
+/* =========================
+   HOTELES
+========================= */
+
+.hoteles {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+.hotel {
+    background: var(--blanco);
+
+    padding: 30px 20px;
+
+    border-top: 4px solid var(--olivo);
+
+    box-shadow: 0 6px 20px rgba(48,40,32,0.08);
+}
+
+.hotel h3 {
+    color: var(--terracota);
+
+    font-size: 21px;
+
+    font-weight: normal;
+}
+
+.hotel-boton {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 10px 18px;
+
+    background: var(--olivo);
+
+    color: var(--blanco);
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   VESTIMENTA
+========================= */
+
+.vestimenta {
+    background: var(--beige);
+
+    padding: 40px;
+
+    margin-top: 35px;
+}
+
+.vestimenta h3 {
+    color: var(--olivo-oscuro);
+
+    font-size: 25px;
+
+    font-weight: normal;
+}
+
+
+/* =========================
+   LLUVIA DE SOBRES
+========================= */
+
+.lluvia {
+    background: var(--blanco);
+
+    padding: 40px;
+
+    margin-top: 35px;
+
+    border: 1px solid var(--beige);
+}
+
+.lluvia .sobre {
+    font-size: 55px;
+
+    color: var(--terracota);
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   SECCIONES PENDIENTES
+========================= */
+
+.pendiente {
+    background: var(--beige);
+
+    padding: 35px;
+
+    margin-top: 30px;
+
+    border-left: 4px solid var(--olivo);
+}
+
+.pendiente strong {
+    color: var(--terracota);
+}
+
+
+/* =========================
+   CIERRE
+========================= */
+
+footer {
+    background: var(--cafe);
+
+    color: var(--crema);
+
+    text-align: center;
+
+    padding: 70px 25px;
+}
+
+footer .nombres {
+    color: var(--terracota);
+
+    font-size: 30px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .portada h1 {
+        font-size: 40px;
+    }
+
+    .portada .fecha {
+        font-size: 17px;
+    }
+
+    .titulo {
+        font-size: 29px;
+    }
+
+    .familia,
+    .padrinos,
+    .hoteles,
+    .fotos {
+        grid-template-columns: 1fr;
+    }
+
+    .contador {
+        gap: 10px;
+    }
+
+    .contador div {
+        min-width: 75px;
+        padding: 15px;
+    }
+
+    .contador span {
+        font-size: 25px;
+    }
+
+    .tarjeta {
+        padding: 30px 20px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         PORTADA
-         ========================= -->
+<!-- =========================
+     PORTADA
+========================= -->
 
-    <div class="portada">
+<header class="portada">
 
-        <h1>Irlandi & Fernando</h1>
+    <div class="pequeno">
+        Nuestra boda
+    </div>
 
-        <p>Nos casamos</p>
+    <h1>
+        Irlandi & Fernando
+    </h1>
 
-        <a href="#invitacion" class="boton">
-            ABRIR INVITACIÓN
-        </a>
+    <div class="fecha">
+        5 de diciembre de 2026
+    </div>
+
+    <a href="#invitacion" class="boton">
+        ABRIR INVITACIÓN
+    </a>
+
+</header>
+
+
+<!-- =========================
+     INVITACIÓN
+========================= -->
+
+<section id="invitacion">
+
+    <div class="adorno">✦</div>
+
+    <div class="subtitulo">
+        Con mucha alegría
+    </div>
+
+    <h2 class="titulo">
+        Queremos compartir este día contigo
+    </h2>
+
+    <p>
+        Nos llena de felicidad poder celebrar este momento
+        rodeados de las personas que forman parte de nuestras vidas.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CUENTA REGRESIVA
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Falta muy poco
+    </div>
+
+    <h2 class="titulo">
+        Cuenta regresiva
+    </h2>
+
+    <div class="contador">
+
+        <div>
+            <span id="dias">0</span>
+            <small>Días</small>
+        </div>
+
+        <div>
+            <span id="horas">0</span>
+            <small>Horas</small>
+        </div>
+
+        <div>
+            <span id="minutos">0</span>
+            <small>Minutos</small>
+        </div>
+
+        <div>
+            <span id="segundos">0</span>
+            <small>Segundos</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HORARIOS
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        El gran día
+    </div>
+
+    <h2 class="titulo">
+        Nuestra celebración
+    </h2>
+
+
+    <div class="tarjeta">
+
+        <h3>
+            Recepción de invitados
+        </h3>
+
+        <div class="hora">
+            3:30 p. m.
+        </div>
 
     </div>
 
 
+    <div class="tarjeta">
 
-    <!-- =========================
-         INVITACIÓN
-         ========================= -->
+        <h3>
+            Ceremonia
+        </h3>
 
-    <section id="invitacion">
-
-        <div class="adorno">✦</div>
-
-        <h2>
-            Con mucha alegría
-        </h2>
-
-        <p>
-            Queremos compartir contigo uno de los días
-            más importantes de nuestras vidas.
-        </p>
-
-        <div class="adorno">❦</div>
-
-
-        <!-- EVENTO -->
-
-        <div class="evento">
-
-            <h2>
-                Nuestra boda
-            </h2>
-
-            <p>
-                <strong class="olivo">
-                    Fecha
-                </strong>
-            </p>
-
-            <p>
-                Próximamente
-            </p>
-
-            <br>
-
-
-            <p>
-                <strong class="olivo">
-                    Hora
-                </strong>
-            </p>
-
-            <p>
-                Próximamente
-            </p>
-
-            <br>
-
-
-            <p>
-                <strong class="olivo">
-                    Lugar
-                </strong>
-            </p>
-
-            <p>
-                Próximamente
-            </p>
-
+        <div class="hora">
+            4:00 p. m.
         </div>
 
+        <p>
+            “El Encanto” Jardín de eventos
+        </p>
 
-        <br><br>
-
-
-        <a href="#" class="boton">
+        <a
+            href="https://maps.app.goo.gl/JJyNm5Zxw2pmKaM3A?g_st=ic"
+            target="_blank"
+            class="boton-olivo">
             VER UBICACIÓN
         </a>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =========================
+     RECEPCIÓN
+========================= -->
 
-    <!-- =========================
-         SECCIÓN OLIVO
-         ========================= -->
+<section class="seccion-olivo">
 
-    <section class="seccion-olivo">
+    <div class="subtitulo">
+        Después de la ceremonia
+    </div>
 
-        <div class="adorno">
-            ♡
+    <h2 class="titulo">
+        Recepción de jardín
+    </h2>
+
+    <p>
+        4:45 p. m.
+    </p>
+
+    <p>
+        Cóctel de bienvenida
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FOTOGRAFÍAS
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Irlandi & Fernando
+    </div>
+
+    <h2 class="titulo">
+        Nuestros recuerdos
+    </h2>
+
+    <p>
+        Aquí aparecerán las seis fotografías que
+        formarán parte de nuestra invitación.
+    </p>
+
+
+    <div class="fotos">
+
+        <div class="foto-placeholder">
+            Fotografía 1
         </div>
 
-        <h2>
-            Un día para recordar
-        </h2>
+        <div class="foto-placeholder">
+            Fotografía 2
+        </div>
+
+        <div class="foto-placeholder">
+            Fotografía 3
+        </div>
+
+        <div class="foto-placeholder">
+            Fotografía 4
+        </div>
+
+        <div class="foto-placeholder">
+            Fotografía 5
+        </div>
+
+        <div class="foto-placeholder">
+            Fotografía 6
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PADRES
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Con el amor de nuestras familias
+    </div>
+
+    <h2 class="titulo">
+        Nuestros padres
+    </h2>
+
+
+    <div class="familia">
+
+        <div class="tarjeta">
+
+            <h3>
+                Padres de la novia
+            </h3>
+
+            <p>
+                Sergio Alvarez Corona
+            </p>
+
+            <p>
+                Patricia Martínez Huerta
+            </p>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <h3>
+                Padres del novio
+            </h3>
+
+            <p>
+                Norma Alicia Mendoza Moreno
+            </p>
+
+            <p>
+                Eduardo Navarrete Árciga
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PADRINOS
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Personas especiales
+    </div>
+
+    <h2 class="titulo">
+        Nuestro cortejo
+    </h2>
+
+    <p>
+        Cada una de estas personas ocupa un lugar
+        especial en nuestra celebración.
+    </p>
+
+
+    <div class="padrinos">
+
+
+        <div class="padrino">
+            <h3>Padrinos de velación</h3>
+            <p>
+                Norma Alicia Mendoza Moreno
+                <br>&
+                <br>
+                Eduardo Navarrete Árciga
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrina de anillos</h3>
+            <p>
+                Patricia Martínez Huerta
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrinos de arras</h3>
+            <p>
+                Paula Espinoza Arellano
+                <br>&
+                <br>
+                Daniel Navarrete Mendoza
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrinos de lazo</h3>
+            <p>
+                Magalli Alvarez Martínez
+                <br>&
+                <br>
+                Daniel Navarrete Mendoza
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrina de Biblia y Rosario</h3>
+            <p>
+                María Elena Corona Jacinto
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrinos de Medalla</h3>
+            <p>
+                Claudia Alvarez Corona
+                <br>&
+                <br>
+                Marco Antonio Moreno Huerta
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrinos de copas</h3>
+            <p>
+                Magalli Alvarez Martínez
+                <br>&
+                <br>
+                Nallely Gómez Vázquez
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Padrino de pastel</h3>
+            <p>
+                Marcos Mendoza Moreno
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Madrina de zapatillas</h3>
+            <p>
+                Alison Melanie Moreno Alvarez
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Madrinas de foto y video</h3>
+            <p>
+                Margarita Sánchez Huerta
+                <br>&
+                <br>
+                María de la Luz Huerta Aviles
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Madrinas de ramo</h3>
+            <p>
+                Janet Martínez García
+                <br>&
+                <br>
+                Mariana Molina Barranco
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Damas de honor</h3>
+            <p>
+                Próximamente
+            </p>
+        </div>
+
+
+        <div class="padrino">
+            <h3>Caballeros</h3>
+            <p>
+                Próximamente
+            </p>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOSPEDAJE
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Para nuestros invitados
+    </div>
+
+    <h2 class="titulo">
+        Opciones de hospedaje
+    </h2>
+
+    <p>
+        Para quienes nos acompañen desde fuera,
+        hemos seleccionado algunas opciones de hospedaje.
+    </p>
+
+
+    <div class="hoteles">
+
+
+        <div class="hotel">
+
+            <h3>
+                Hotel Borda
+            </h3>
+
+            <a
+                href="https://www.hotelesborda.mx/"
+                target="_blank"
+                class="hotel-boton">
+                VER HOTEL
+            </a>
+
+        </div>
+
+
+        <div class="hotel">
+
+            <h3>
+                Hotel Arcadia
+            </h3>
+
+            <a
+                href="https://share.google/gHRKZmuS0vHIDyZsd"
+                target="_blank"
+                class="hotel-boton">
+                VER HOTEL
+            </a>
+
+        </div>
+
+
+        <div class="hotel">
+
+            <h3>
+                Hotel Real del Sol
+            </h3>
+
+            <a
+                href="https://maps.app.goo.gl/Vd6BwfgVb9rV4FXz6?g_st=aw"
+                target="_blank"
+                class="hotel-boton">
+                VER UBICACIÓN
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VESTIMENTA
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Código de vestimenta
+    </div>
+
+    <h2 class="titulo">
+        De etiqueta en jardín
+    </h2>
+
+
+    <div class="vestimenta">
+
+        <h3>
+            Una consideración especial
+        </h3>
+
+        <br>
 
         <p>
-            Gracias por formar parte de nuestra historia.
+            Les pedimos reservar el color
+            <strong>marrón</strong>
+            para las damas y el color
+            <strong>blanco</strong>
+            exclusivamente para la novia.
         </p>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =========================
+     LLUVIA DE SOBRES
+========================= -->
 
-    <!-- =========================
-         PIE DE PÁGINA
-         ========================= -->
+<section>
 
-    <footer>
+    <div class="subtitulo">
+        Un detalle para nuestro futuro
+    </div>
 
-        <p class="nombre">
-            Irlandi & Fernando
+    <h2 class="titulo">
+        Lluvia de sobres
+    </h2>
+
+
+    <div class="lluvia">
+
+        <div class="sobre">
+            ✉
+        </div>
+
+        <p>
+            <strong>
+                Sugerencia de regalo:
+            </strong>
+        </p>
+
+        <p>
+            Buzón de sobres para nuestro futuro juntos.
         </p>
 
         <br>
 
         <p>
-            Gracias por acompañarnos en este día tan especial.
+            <strong>
+                ¡No te preocupes!
+            </strong>
         </p>
 
-    </footer>
+        <p>
+            En la recepción les proporcionarán
+            sobres personalizados.
+        </p>
 
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ÁLBUM DE INVITADOS
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Compartamos nuestros recuerdos
+    </div>
+
+    <h2 class="titulo">
+        Álbum de invitados
+    </h2>
+
+
+    <div class="pendiente">
+
+        <p>
+            Muy pronto podrás compartir tus fotografías
+            favoritas de nuestra celebración.
+        </p>
+
+        <br>
+
+        <strong>
+            #IrlandiYFernando2026
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONFIRMACIÓN
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Queremos contar contigo
+    </div>
+
+    <h2 class="titulo">
+        Confirmación de asistencia
+    </h2>
+
+
+    <div class="pendiente">
+
+        <p>
+            El formulario de confirmación estará
+            disponible próximamente.
+        </p>
+
+        <br>
+
+        <strong>
+            ¡Esperamos celebrar contigo!
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CIERRE
+========================= -->
+
+<footer>
+
+    <div class="nombres">
+        Irlandi & Fernando
+    </div>
+
+    <p>
+        5 de diciembre de 2026
+    </p>
+
+    <br>
+
+    <p>
+        Gracias por formar parte de este día
+        tan especial para nosotros.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     CUENTA REGRESIVA
+========================= -->
+
+<script>
+
+const fechaBoda = new Date("December 5, 2026 16:00:00").getTime();
+
+function actualizarContador() {
+
+    const ahora = new Date().getTime();
+
+    const diferencia = fechaBoda - ahora;
+
+    if (diferencia <= 0) {
+
+        document.getElementById("dias").textContent = "0";
+        document.getElementById("horas").textContent = "0";
+        document.getElementById("minutos").textContent = "0";
+        document.getElementById("segundos").textContent = "0";
+
+        return;
+    }
+
+    const dias = Math.floor(
+        diferencia / (1000 * 60 * 60 * 24)
+    );
+
+    const horas = Math.floor(
+        (diferencia / (1000 * 60 * 60)) % 24
+    );
+
+    const minutos = Math.floor(
+        (diferencia / (1000 * 60)) % 60
+    );
+
+    const segundos = Math.floor(
+        (diferencia / 1000) % 60
+    );
+
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent = horas;
+    document.getElementById("minutos").textContent = minutos;
+    document.getElementById("segundos").textContent = segundos;
+}
+
+actualizarContador();
+
+setInterval(actualizarContador, 1000);
+
+</script>
 
 </body>
 </html>
