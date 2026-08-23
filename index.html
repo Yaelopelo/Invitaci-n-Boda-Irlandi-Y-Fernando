@@ -14,6 +14,10 @@
 
 <style>
 
+/* =====================================================
+   COLORES
+===================================================== */
+
 :root {
     --terracota: #B65F4A;
     --terracota-dark: #914735;
@@ -33,6 +37,11 @@
     --blanco: #FFFFFF;
 }
 
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -47,6 +56,7 @@ body {
     background: var(--crema);
     color: var(--cafe);
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
 p {
@@ -63,21 +73,79 @@ a {
     text-decoration: none;
 }
 
-/* =========================
+
+/* =====================================================
    MUSICA
-========================= */
+===================================================== */
 
 #musica {
     display: none;
 }
 
 
-/* =========================
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flotar {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+@keyframes latido {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
    PORTADA
-========================= */
+===================================================== */
 
 .portada {
     min-height: 100vh;
+
     position: relative;
 
     display: flex;
@@ -85,6 +153,7 @@ a {
     align-items: center;
 
     text-align: center;
+
     padding: 35px;
 
     background:
@@ -99,83 +168,125 @@ a {
 
 .portada::before {
     content: "";
+
     position: absolute;
+
     inset: 22px;
-    border: 1px solid rgba(255,255,255,.75);
+
+    border:
+        1px solid
+        rgba(255,255,255,.75);
+
+    pointer-events: none;
 }
 
 .portada-contenido {
     position: relative;
     z-index: 2;
-    animation: aparecer 1.4s ease;
+
+    animation:
+        aparecer 1.5s ease;
 }
 
 .portada .pequeno {
     font-family: "Montserrat", sans-serif;
+
     font-size: 11px;
     font-weight: 600;
+
     letter-spacing: 6px;
+
     text-transform: uppercase;
 }
 
 .portada h1 {
     font-family: "Great Vibes", cursive;
+
     font-size: 90px;
+
     font-weight: 400;
+
     line-height: 1.1;
+
+    margin: 8px 0;
 }
 
 .portada .fecha {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 26px;
+
     letter-spacing: 6px;
+
     margin-top: 15px;
 }
 
+
+/* =====================================================
+   BOTON PRINCIPAL
+===================================================== */
+
 .boton {
     display: inline-block;
+
     margin-top: 38px;
+
     padding: 14px 34px;
 
     background: var(--terracota);
+
     color: white;
 
-    border: 1px solid rgba(255,255,255,.8);
+    border:
+        1px solid
+        rgba(255,255,255,.8);
 
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
     font-weight: 600;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
 
     transition: .3s;
+
+    cursor: pointer;
 }
 
 .boton:hover {
     background: var(--terracota-dark);
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-3px);
 }
 
 
-/* =========================
+/* =====================================================
    SECCIONES
-========================= */
+===================================================== */
 
 section {
     max-width: 950px;
+
     margin: auto;
+
     padding: 90px 25px;
+
     text-align: center;
 }
 
 .subtitulo {
     font-family: "Montserrat", sans-serif;
+
     color: var(--terracota);
 
     font-size: 10px;
     font-weight: 600;
 
     letter-spacing: 4px;
+
     text-transform: uppercase;
 
     margin-bottom: 12px;
@@ -183,9 +294,11 @@ section {
 
 .titulo {
     font-family: "Cormorant Garamond", serif;
+
     color: var(--olivo-dark);
 
     font-size: 49px;
+
     font-weight: 500;
 
     line-height: 1.1;
@@ -195,33 +308,44 @@ section {
 
 .adorno {
     color: var(--terracota);
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 30px;
+
     margin-bottom: 15px;
 }
 
 .titulo::after {
     content: "❧";
+
     display: block;
 
     color: var(--terracota);
 
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 24px;
 
     margin-top: 12px;
 }
 
 
-/* =========================
+/* =====================================================
    FOTOGRAFIAS
-========================= */
+===================================================== */
 
 .foto-separadora {
     height: 55vh;
+
     min-height: 360px;
 
     max-width: none;
+
     padding: 0;
 
     background-position: center;
@@ -231,14 +355,18 @@ section {
     position: relative;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 }
 
 .foto-separadora::before {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -250,32 +378,49 @@ section {
 
 .foto-texto {
     position: relative;
+
     z-index: 2;
 
     color: white;
 
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
+
     font-size: 54px;
 
     text-shadow:
-        0 2px 15px rgba(0,0,0,.35);
+        0 2px 15px
+        rgba(0,0,0,.35);
 
     padding: 20px 35px;
 
-    border-top: 1px solid rgba(255,255,255,.7);
-    border-bottom: 1px solid rgba(255,255,255,.7);
+    border-top:
+        1px solid
+        rgba(255,255,255,.7);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.7);
+
+    animation:
+        flotar 4s ease-in-out infinite;
 }
 
 
-/* =========================
+/* =====================================================
    CONTADOR
-========================= */
+===================================================== */
 
 .contador {
     display: flex;
+
     justify-content: center;
+
     gap: 16px;
+
     flex-wrap: wrap;
+
     margin-top: 45px;
 }
 
@@ -286,34 +431,52 @@ section {
 
     padding: 21px 18px;
 
-    border-top: 3px solid var(--terracota);
+    border-top:
+        3px solid
+        var(--terracota);
 
     box-shadow:
-        0 8px 25px rgba(58,44,36,.07);
+        0 8px 25px
+        rgba(58,44,36,.07);
+
+    transition: .3s;
+}
+
+.contador div:hover {
+    transform:
+        translateY(-5px);
 }
 
 .contador span {
     display: block;
 
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
+
     color: var(--olivo-dark);
 
     font-size: 34px;
 }
 
 .contador small {
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
+
     color: var(--terracota);
 
     font-size: 9px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
 
-/* =========================
+/* =====================================================
    TARJETAS
-========================= */
+===================================================== */
 
 .tarjeta {
     background: white;
@@ -322,16 +485,29 @@ section {
 
     padding: 42px 30px;
 
-    border-top: 4px solid var(--terracota);
+    border-top:
+        4px solid
+        var(--terracota);
 
     box-shadow:
-        0 10px 28px rgba(58,44,36,.07);
+        0 10px 28px
+        rgba(58,44,36,.07);
+
+    transition: .35s;
+}
+
+.tarjeta:hover {
+    transform:
+        translateY(-5px);
 }
 
 .tarjeta h3 {
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
-    color: var(--terracota-dark);
+    color:
+        var(--terracota-dark);
 
     font-size: 27px;
 
@@ -341,9 +517,12 @@ section {
 }
 
 .hora {
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    color: var(--olivo-dark);
+    color:
+        var(--olivo-dark);
 
     font-size: 34px;
 
@@ -357,30 +536,38 @@ section {
 
     padding: 12px 27px;
 
-    background: var(--olivo);
+    background:
+        var(--olivo);
 
     color: white;
 
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
     font-size: 9px;
+
     font-weight: 600;
 
     letter-spacing: 2px;
+
     text-transform: uppercase;
 
     transition: .3s;
 }
 
 .boton-olivo:hover {
-    background: var(--olivo-dark);
-    transform: translateY(-2px);
+    background:
+        var(--olivo-dark);
+
+    transform:
+        translateY(-2px);
 }
 
 
-/* =========================
+/* =====================================================
    RECEPCION
-========================= */
+===================================================== */
 
 .seccion-olivo {
     max-width: none;
@@ -394,7 +581,8 @@ section {
 
     color: white;
 
-    padding: 95px 25px;
+    padding:
+        95px 25px;
 }
 
 .seccion-olivo .subtitulo {
@@ -408,20 +596,23 @@ section {
 .seccion-olivo p {
     color: var(--beige-light);
 
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size: 25px;
 }
 
 
-/* =========================
+/* =====================================================
    PADRES
-========================= */
+===================================================== */
 
 .familia {
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
     gap: 25px;
 
@@ -430,11 +621,15 @@ section {
 
 .familia .tarjeta {
     margin-top: 0;
-    background: var(--beige-light);
+
+    background:
+        var(--beige-light);
 }
 
 .familia .tarjeta p {
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
     color: var(--cafe);
 
@@ -444,31 +639,153 @@ section {
 }
 
 
-/* =========================
-   CORTEJO
-========================= */
+/* =====================================================
+   CORTEJO INTERACTIVO
+===================================================== */
 
 .padrinos {
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
     gap: 22px;
 
     margin-top: 45px;
 }
 
-.padrino {
-    background: white;
 
-    padding: 32px 25px;
+/* SOBRE */
 
-    min-height: 175px;
+.sobre-padrino {
+    position: relative;
 
-    border-left: 4px solid var(--terracota);
+    min-height: 220px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    outline: none;
+}
+
+.sobre-frente {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--beige-light),
+            #ead9c3
+        );
+
+    border:
+        1px solid
+        rgba(145,71,53,.25);
 
     box-shadow:
-        0 8px 24px rgba(58,44,36,.07);
+        0 10px 28px
+        rgba(58,44,36,.10);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+    z-index: 2;
+
+    overflow: hidden;
+}
+
+.sobre-frente::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 49%,
+            rgba(182,95,74,.16) 50%
+        );
+
+    pointer-events: none;
+}
+
+.sobre-icono {
+    font-size: 53px;
+
+    color:
+        var(--terracota);
+
+    margin-bottom: 8px;
+
+    animation:
+        latido 2.8s ease-in-out infinite;
+}
+
+.sobre-frente h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    color:
+        var(--terracota-dark);
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    font-style: italic;
+
+    line-height: 1.2;
+
+    padding: 0 20px;
+}
+
+.sobre-frente small {
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    color:
+        var(--olivo-dark);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-top: 13px;
+}
+
+
+/* CONTENIDO DEL SOBRE */
+
+.sobre-contenido {
+    position: absolute;
+
+    inset: 0;
+
+    background: white;
+
+    padding: 30px 20px;
 
     display: flex;
 
@@ -480,48 +797,106 @@ section {
 
     text-align: center;
 
-    transition: .3s;
+    opacity: 0;
+
+    transform:
+        scale(.92);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+    z-index: 1;
+
+    border:
+        1px solid
+        var(--beige);
 }
 
-.padrino:hover {
-    transform: translateY(-4px);
-}
+.sobre-contenido h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-.padrino h3 {
-    font-family: "Cormorant Garamond", serif;
+    color:
+        var(--terracota-dark);
 
-    color: var(--terracota-dark);
-
-    font-size: 25px;
-
-    font-weight: 600;
+    font-size: 26px;
 
     font-style: italic;
 
-    line-height: 1.2;
-
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 }
 
-.padrino p {
-    font-family: "Playfair Display", serif;
+.sobre-contenido p {
+    font-family:
+        "Playfair Display",
+        serif;
 
-    color: var(--cafe);
+    color:
+        var(--cafe);
 
-    font-size: 19px;
+    font-size: 18px;
 
     line-height: 1.45;
 }
 
+.sobre-contenido .cerrar-sobre {
+    margin-top: 18px;
 
-/* =========================
+    border: none;
+
+    background: transparent;
+
+    color:
+        var(--olivo-dark);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+
+/* ABIERTO */
+
+.sobre-padrino.abierto
+.sobre-frente {
+    opacity: 0;
+
+    transform:
+        scale(.92);
+
+    pointer-events: none;
+}
+
+.sobre-padrino.abierto
+.sobre-contenido {
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    z-index: 3;
+}
+
+
+/* =====================================================
    HOTELES
-========================= */
+===================================================== */
 
 .hoteles {
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap: 20px;
 
@@ -529,20 +904,34 @@ section {
 }
 
 .hotel {
-    background: var(--beige-light);
+    background:
+        var(--beige-light);
 
     padding: 35px 20px;
 
-    border-top: 4px solid var(--olivo);
+    border-top:
+        4px solid
+        var(--olivo);
 
     box-shadow:
-        0 7px 22px rgba(58,44,36,.06);
+        0 7px 22px
+        rgba(58,44,36,.06);
+
+    transition: .3s;
+}
+
+.hotel:hover {
+    transform:
+        translateY(-5px);
 }
 
 .hotel h3 {
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
-    color: var(--terracota-dark);
+    color:
+        var(--terracota-dark);
 
     font-size: 25px;
 }
@@ -554,11 +943,14 @@ section {
 
     padding: 11px 20px;
 
-    background: var(--olivo);
+    background:
+        var(--olivo);
 
     color: white;
 
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
     font-size: 9px;
 
@@ -572,28 +964,35 @@ section {
 }
 
 .hotel-boton:hover {
-    background: var(--olivo-dark);
+    background:
+        var(--olivo-dark);
 }
 
 
-/* =========================
+/* =====================================================
    VESTIMENTA
-========================= */
+===================================================== */
 
 .vestimenta {
-    background: var(--beige);
+    background:
+        var(--beige);
 
     padding: 48px 35px;
 
     margin-top: 35px;
 
-    border-left: 5px solid var(--terracota);
+    border-left:
+        5px solid
+        var(--terracota);
 }
 
 .vestimenta h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
-    color: var(--olivo-dark);
+    color:
+        var(--olivo-dark);
 
     font-size: 32px;
 
@@ -601,9 +1000,9 @@ section {
 }
 
 
-/* =========================
+/* =====================================================
    LLUVIA DE SOBRES
-========================= */
+===================================================== */
 
 .lluvia {
     background: white;
@@ -612,74 +1011,81 @@ section {
 
     margin-top: 35px;
 
-    border: 1px solid var(--beige);
+    border:
+        1px solid
+        var(--beige);
 
     box-shadow:
-        0 8px 25px rgba(58,44,36,.06);
+        0 8px 25px
+        rgba(58,44,36,.06);
 }
 
 .lluvia .sobre {
     font-size: 55px;
 
-    color: var(--terracota);
+    color:
+        var(--terracota);
 
     margin-bottom: 15px;
+
+    animation:
+        latido 3s ease-in-out infinite;
 }
 
 .lluvia strong {
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
     font-size: 19px;
 }
 
 
-/* =========================
-   ALBUM GOOGLE FOTOS
-========================= */
+/* =====================================================
+   ALBUM
+===================================================== */
 
-.album {
-    background: white;
+.pendiente {
+    background:
+        var(--beige-light);
 
-    padding: 50px 30px;
+    padding: 38px;
 
-    margin-top: 35px;
+    margin-top: 30px;
 
-    border: 1px solid var(--beige);
-
-    border-top: 5px solid var(--olivo);
-
-    box-shadow:
-        0 10px 30px rgba(58,44,36,.07);
+    border-left:
+        4px solid
+        var(--olivo);
 }
 
-.album .icono {
-    font-size: 52px;
+.pendiente strong {
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    color: var(--terracota);
+    color:
+        var(--terracota);
 
-    margin-bottom: 15px;
+    font-size: 38px;
+
+    font-weight: 400;
 }
 
-.album strong {
-    font-family: "Playfair Display", serif;
-
-    font-size: 19px;
-}
-
-.boton-album {
+.boton-fotos {
     display: inline-block;
 
     margin-top: 28px;
 
-    padding: 15px 34px;
+    padding: 15px 30px;
 
-    background: var(--olivo);
+    background:
+        var(--olivo);
 
     color: white;
 
-    border: 1px solid var(--olivo-dark);
-
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
     font-size: 10px;
 
@@ -689,107 +1095,25 @@ section {
 
     text-transform: uppercase;
 
-    box-shadow:
-        0 8px 20px rgba(82,90,61,.18);
-
     transition: .3s;
+
+    box-shadow:
+        0 8px 20px
+        rgba(82,90,61,.18);
 }
 
-.boton-album:hover {
-    background: var(--olivo-dark);
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
+.boton-fotos:hover {
     background:
-        linear-gradient(
-            135deg,
-            var(--beige-light),
-            var(--crema)
-        );
+        var(--olivo-dark);
 
-    padding: 50px 30px;
-
-    margin-top: 35px;
-
-    border: 1px solid var(--beige);
-
-    border-top: 5px solid var(--terracota);
-
-    box-shadow:
-        0 10px 30px rgba(58,44,36,.08);
-}
-
-.whatsapp .icono {
-    font-size: 48px;
-
-    color: var(--terracota);
-
-    margin-bottom: 12px;
-}
-
-.whatsapp p {
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    font-family: "Lora", serif;
-
-    color: var(--cafe-light);
-
-    font-size: 17px;
-}
-
-.botones-whatsapp {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
-    margin-top: 28px;
-}
-
-.boton-whatsapp {
-    display: inline-block;
-
-    padding: 14px 25px;
-
-    background: var(--olivo);
-
-    color: white;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition: .3s;
-}
-
-.boton-whatsapp:hover {
-    background: var(--olivo-dark);
-
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
-/* =========================
+/* =====================================================
    CONFIRMACION
-========================= */
+===================================================== */
 
 .confirmacion {
     background:
@@ -803,12 +1127,17 @@ section {
 
     margin-top: 35px;
 
-    border: 1px solid var(--beige);
+    border:
+        1px solid
+        var(--beige);
 
-    border-top: 5px solid var(--terracota);
+    border-top:
+        5px solid
+        var(--terracota);
 
     box-shadow:
-        0 10px 30px rgba(58,44,36,.08);
+        0 10px 30px
+        rgba(58,44,36,.08);
 }
 
 .confirmacion p {
@@ -816,9 +1145,12 @@ section {
 
     margin: 0 auto;
 
-    font-family: "Lora", serif;
+    font-family:
+        "Lora",
+        serif;
 
-    color: var(--cafe-light);
+    color:
+        var(--cafe-light);
 
     font-size: 17px;
 }
@@ -830,13 +1162,18 @@ section {
 
     padding: 16px 38px;
 
-    background: var(--terracota);
+    background:
+        var(--terracota);
 
     color: white;
 
-    border: 1px solid var(--terracota-dark);
+    border:
+        1px solid
+        var(--terracota-dark);
 
-    font-family: "Montserrat", sans-serif;
+    font-family:
+        "Montserrat",
+        sans-serif;
 
     font-size: 11px;
 
@@ -847,39 +1184,133 @@ section {
     text-transform: uppercase;
 
     box-shadow:
-        0 8px 20px rgba(145,71,53,.20);
+        0 8px 20px
+        rgba(145,71,53,.20);
 
     transition: .3s;
 }
 
 .boton-confirmacion:hover {
-    background: var(--terracota-dark);
+    background:
+        var(--terracota-dark);
 
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(145,71,53,.25);
+    transform:
+        translateY(-3px);
 }
 
 
-/* =========================
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp-seccion {
+    background:
+        linear-gradient(
+            135deg,
+            #f1e8da,
+            #f7f1e6
+        );
+
+    border-top:
+        1px solid
+        var(--beige);
+
+    border-bottom:
+        1px solid
+        var(--beige);
+}
+
+.whatsapp-texto {
+    max-width: 650px;
+
+    margin:
+        0 auto 30px;
+}
+
+.whatsapp-botones {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.boton-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 220px;
+
+    padding: 15px 25px;
+
+    background:
+        var(--olivo);
+
+    color: white;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: .3s;
+
+    box-shadow:
+        0 8px 20px
+        rgba(82,90,61,.16);
+}
+
+.boton-whatsapp:hover {
+    background:
+        var(--olivo-dark);
+
+    transform:
+        translateY(-3px);
+}
+
+.whatsapp-icono {
+    font-size: 18px;
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
-    background: var(--cafe);
+    background:
+        var(--cafe);
 
-    color: var(--crema);
+    color:
+        var(--crema);
 
     text-align: center;
 
-    padding: 80px 25px;
+    padding:
+        80px 25px;
 }
 
 footer .nombres {
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    color: var(--terracota-light);
+    color:
+        var(--terracota-light);
 
     font-size: 65px;
 
@@ -887,36 +1318,20 @@ footer .nombres {
 }
 
 footer p {
-    color: var(--beige-light);
+    color:
+        var(--beige-light);
 
-    font-family: "Cormorant Garamond", serif;
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size: 22px;
 }
 
 
-/* =========================
-   ANIMACION
-========================= */
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
+/* =====================================================
    CELULAR
-========================= */
+===================================================== */
 
 @media (max-width:700px) {
 
@@ -950,15 +1365,16 @@ footer p {
     .contador div {
         min-width: 72px;
 
-        padding: 15px 10px;
+        padding:
+            15px 10px;
     }
 
     .contador span {
         font-size: 28px;
     }
 
-    .padrino {
-        min-height: 165px;
+    .sobre-padrino {
+        min-height: 210px;
     }
 
     footer .nombres {
@@ -966,26 +1382,44 @@ footer p {
     }
 
     .confirmacion {
-        padding: 40px 22px;
+        padding:
+            40px 22px;
     }
 
     .boton-confirmacion {
-        padding: 15px 25px;
+        padding:
+            15px 25px;
 
         font-size: 10px;
 
         letter-spacing: 2px;
     }
 
-    .album,
-    .whatsapp {
-        padding: 40px 22px;
-    }
-
-    .boton-album,
     .boton-whatsapp {
         width: 100%;
-        max-width: 320px;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCCION DE MOVIMIENTO
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
 
 }
@@ -994,12 +1428,13 @@ footer p {
 
 </head>
 
+
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      MUSICA
-========================= -->
+===================================================== -->
 
 <audio
     id="musica"
@@ -1013,9 +1448,9 @@ footer p {
 </audio>
 
 
-<!-- =========================
+<!-- =====================================================
      PORTADA
-========================= -->
+===================================================== -->
 
 <header class="portada">
 
@@ -1047,9 +1482,13 @@ footer p {
 </header>
 
 
-<!-- INTRODUCCION -->
+<!-- =====================================================
+     INTRODUCCION
+===================================================== -->
 
-<section id="invitacion">
+<section
+    id="invitacion"
+    class="reveal">
 
     <div class="adorno">
         ✦
@@ -1071,7 +1510,9 @@ footer p {
 </section>
 
 
-<!-- FOTO 2 -->
+<!-- =====================================================
+     FOTO 2
+===================================================== -->
 
 <section
     class="foto-separadora"
@@ -1084,9 +1525,11 @@ footer p {
 </section>
 
 
-<!-- CONTADOR -->
+<!-- =====================================================
+     CONTADOR
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Falta muy poco
@@ -1123,9 +1566,11 @@ footer p {
 </section>
 
 
-<!-- CEREMONIA -->
+<!-- =====================================================
+     CEREMONIA
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         El gran día
@@ -1147,6 +1592,7 @@ footer p {
 
     </div>
 
+
     <div class="tarjeta">
 
         <h3>
@@ -1164,6 +1610,7 @@ footer p {
         <a
             href="https://maps.app.goo.gl/JJyNm5Zxw2pmKaM3A?g_st=ic"
             target="_blank"
+            rel="noopener noreferrer"
             class="boton-olivo">
 
             Ver ubicación
@@ -1175,7 +1622,9 @@ footer p {
 </section>
 
 
-<!-- FOTO 3 -->
+<!-- =====================================================
+     FOTO 3
+===================================================== -->
 
 <section
     class="foto-separadora"
@@ -1188,9 +1637,12 @@ footer p {
 </section>
 
 
-<!-- RECEPCION -->
+<!-- =====================================================
+     RECEPCION
+===================================================== -->
 
-<section class="seccion-olivo">
+<section
+    class="seccion-olivo reveal">
 
     <div class="subtitulo">
         Después de la ceremonia
@@ -1211,7 +1663,9 @@ footer p {
 </section>
 
 
-<!-- FOTO 4 -->
+<!-- =====================================================
+     FOTO 4
+===================================================== -->
 
 <section
     class="foto-separadora"
@@ -1224,9 +1678,11 @@ footer p {
 </section>
 
 
-<!-- PADRES -->
+<!-- =====================================================
+     PADRES
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Con el amor de nuestras familias
@@ -1254,6 +1710,7 @@ footer p {
 
         </div>
 
+
         <div class="tarjeta">
 
             <h3>
@@ -1275,9 +1732,11 @@ footer p {
 </section>
 
 
-<!-- CORTEJO -->
+<!-- =====================================================
+     CORTEJO INTERACTIVO
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Personas especiales
@@ -1294,97 +1753,630 @@ footer p {
 
     <div class="padrinos">
 
-        <div class="padrino">
-            <h3>Padrinos de velación</h3>
-            <p>
-                Norma Alicia Mendoza Moreno
-                <br>&<br>
-                Eduardo Navarrete Árciga
-            </p>
+
+        <!-- 1 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrinos de velación
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrinos de velación
+                </h3>
+
+                <p>
+                    Norma Alicia Mendoza Moreno
+                    <br>
+                    &
+                    <br>
+                    Eduardo Navarrete Árciga
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Madrina de anillos</h3>
-            <p>Patricia Martínez Huerta</p>
+
+        <!-- 2 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Madrina de anillos
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Madrina de anillos
+                </h3>
+
+                <p>
+                    Patricia Martínez Huerta
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Padrinos de arras</h3>
-            <p>
-                Paula Espinoza Arellano
-                <br>&<br>
-                Daniel Navarrete Mendoza
-            </p>
+
+        <!-- 3 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrinos de arras
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrinos de arras
+                </h3>
+
+                <p>
+                    Paula Espinoza Arellano
+                    <br>
+                    &
+                    <br>
+                    Daniel Navarrete Mendoza
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Padrinos de lazo</h3>
-            <p>
-                Magalli Alvarez Martínez
-                <br>&<br>
-                Daniel Navarrete Mendoza
-            </p>
+
+        <!-- 4 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrinos de lazo
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrinos de lazo
+                </h3>
+
+                <p>
+                    Magalli Alvarez Martínez
+                    <br>
+                    &
+                    <br>
+                    Daniel Navarrete Mendoza
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Madrina de Biblia y Rosario</h3>
-            <p>María Elena Corona Jacinto</p>
+
+        <!-- 5 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Madrina de Biblia y Rosario
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Madrina de Biblia y Rosario
+                </h3>
+
+                <p>
+                    María Elena Corona Jacinto
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Padrinos de medalla</h3>
-            <p>
-                Claudia Alvarez Corona
-                <br>&<br>
-                Marco Antonio Moreno Huerta
-            </p>
+
+        <!-- 6 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrinos de medalla
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrinos de medalla
+                </h3>
+
+                <p>
+                    Claudia Alvarez Corona
+                    <br>
+                    &
+                    <br>
+                    Marco Antonio Moreno Huerta
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Padrinos de copas</h3>
-            <p>
-                Magalli Alvarez Martínez
-                <br>&<br>
-                Nallely Gómez Vázquez
-            </p>
+
+        <!-- 7 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrinos de copas
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrinos de copas
+                </h3>
+
+                <p>
+                    Magalli Alvarez Martínez
+                    <br>
+                    &
+                    <br>
+                    Nallely Gómez Vázquez
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Padrino de pastel</h3>
-            <p>Marcos Mendoza Moreno</p>
+
+        <!-- 8 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Padrino de pastel
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Padrino de pastel
+                </h3>
+
+                <p>
+                    Marcos Mendoza Moreno
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Madrina de zapatillas</h3>
-            <p>Alison Melanie Moreno Alvarez</p>
+
+        <!-- 9 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Madrina de zapatillas
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Madrina de zapatillas
+                </h3>
+
+                <p>
+                    Alison Melanie Moreno Alvarez
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Madrinas de foto y video</h3>
-            <p>
-                Margarita Sánchez Huerta
-                <br>&<br>
-                María de la Luz Huerta Aviles
-            </p>
+
+        <!-- 10 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Madrinas de foto y video
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Madrinas de foto y video
+                </h3>
+
+                <p>
+                    Margarita Sánchez Huerta
+                    <br>
+                    &
+                    <br>
+                    María de la Luz Huerta Aviles
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Madrinas de ramo</h3>
-            <p>
-                Janet Martínez García
-                <br>&<br>
-                Mariana Molina Barranco
-            </p>
+
+        <!-- 11 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Madrinas de ramo
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Madrinas de ramo
+                </h3>
+
+                <p>
+                    Janet Martínez García
+                    <br>
+                    &
+                    <br>
+                    Mariana Molina Barranco
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Damas de honor</h3>
-            <p>Próximamente</p>
+
+        <!-- 12 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Damas de honor
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Damas de honor
+                </h3>
+
+                <p>
+                    Próximamente
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="padrino">
-            <h3>Caballeros</h3>
-            <p>Próximamente</p>
+
+        <!-- 13 -->
+
+        <div
+            class="sobre-padrino"
+            tabindex="0"
+            role="button">
+
+            <div class="sobre-frente">
+
+                <div class="sobre-icono">
+                    ✉
+                </div>
+
+                <h3>
+                    Caballeros
+                </h3>
+
+                <small>
+                    Toca para descubrir
+                </small>
+
+            </div>
+
+            <div class="sobre-contenido">
+
+                <h3>
+                    Caballeros
+                </h3>
+
+                <p>
+                    Próximamente
+                </p>
+
+                <button
+                    class="cerrar-sobre"
+                    type="button">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
         </div>
 
     </div>
@@ -1392,7 +2384,9 @@ footer p {
 </section>
 
 
-<!-- FOTO 5 -->
+<!-- =====================================================
+     FOTO 5
+===================================================== -->
 
 <section
     class="foto-separadora"
@@ -1405,9 +2399,11 @@ footer p {
 </section>
 
 
-<!-- HOTELES -->
+<!-- =====================================================
+     HOTELES
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Para nuestros invitados
@@ -1422,7 +2418,9 @@ footer p {
         hemos seleccionado algunas opciones de hospedaje.
     </p>
 
+
     <div class="hoteles">
+
 
         <div class="hotel">
 
@@ -1433,6 +2431,7 @@ footer p {
             <a
                 href="https://www.hotelesborda.mx/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="hotel-boton">
 
                 Ver hotel
@@ -1440,6 +2439,7 @@ footer p {
             </a>
 
         </div>
+
 
         <div class="hotel">
 
@@ -1450,6 +2450,7 @@ footer p {
             <a
                 href="https://share.google/gHRKZmuS0vHIDyZsd"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="hotel-boton">
 
                 Ver hotel
@@ -1457,6 +2458,7 @@ footer p {
             </a>
 
         </div>
+
 
         <div class="hotel">
 
@@ -1467,6 +2469,7 @@ footer p {
             <a
                 href="https://maps.app.goo.gl/Vd6BwfgVb9rV4FXz6?g_st=aw"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="hotel-boton">
 
                 Ver ubicación
@@ -1480,9 +2483,11 @@ footer p {
 </section>
 
 
-<!-- VESTIMENTA -->
+<!-- =====================================================
+     VESTIMENTA
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Código de vestimenta
@@ -1491,6 +2496,7 @@ footer p {
     <h2 class="titulo">
         De etiqueta en jardín
     </h2>
+
 
     <div class="vestimenta">
 
@@ -1513,9 +2519,11 @@ footer p {
 </section>
 
 
-<!-- LLUVIA DE SOBRES -->
+<!-- =====================================================
+     LLUVIA DE SOBRES
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Un detalle para nuestro futuro
@@ -1524,6 +2532,7 @@ footer p {
     <h2 class="titulo">
         Lluvia de sobres
     </h2>
+
 
     <div class="lluvia">
 
@@ -1559,7 +2568,9 @@ footer p {
 </section>
 
 
-<!-- FOTO 6 -->
+<!-- =====================================================
+     FOTO 6
+===================================================== -->
 
 <section
     class="foto-separadora"
@@ -1572,11 +2583,11 @@ footer p {
 </section>
 
 
-<!-- =========================
-     ALBUM GOOGLE FOTOS
-========================= -->
+<!-- =====================================================
+     ALBUM DE FOTOS
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Compartamos nuestros recuerdos
@@ -1586,32 +2597,30 @@ footer p {
         Álbum de invitados
     </h2>
 
-    <div class="album">
 
-        <div class="icono">
-            📷
-        </div>
+    <div class="pendiente">
 
         <p>
-            <strong>
-                ¡Ayúdanos a llenar nuestro álbum!
-            </strong>
+            Comparte tus fotografías favoritas
+            de nuestra celebración y ayúdanos a
+            guardar estos recuerdos para siempre.
         </p>
 
         <br>
 
-        <p>
-            Comparte las fotografías que tomes durante
-            nuestra celebración y forma parte de nuestros recuerdos.
-        </p>
+        <strong>
+            #IrlandiYFernando2026
+        </strong>
+
+        <br>
 
         <a
             href="https://photos.app.goo.gl/HDe2px4fACf7NwXB9"
             target="_blank"
             rel="noopener noreferrer"
-            class="boton-album">
+            class="boton-fotos">
 
-            Compartir fotografías
+            📸 Compartir fotografías
 
         </a>
 
@@ -1620,66 +2629,73 @@ footer p {
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      WHATSAPP
-========================= -->
+===================================================== -->
 
-<section>
+<section class="whatsapp-seccion reveal">
 
     <div class="subtitulo">
-        Estamos para escucharte
+        Estamos para ustedes
     </div>
 
     <h2 class="titulo">
-        ¿Quieres decirnos algo?
+        ¿Tienes algún comentario?
     </h2>
 
-    <div class="whatsapp">
-
-        <div class="icono">
-            ✉
-        </div>
+    <div class="whatsapp-texto">
 
         <p>
-            Si tienes algún comentario especial
-            que quieras hacernos llegar,
-            escríbenos por WhatsApp.
+            Si tienes algún comentario especial que
+            quieras hacernos llegar, escríbenos por
+            WhatsApp.
         </p>
 
-        <div class="botones-whatsapp">
+    </div>
 
-            <a
-                href="https://wa.me/525534325116?text=Hola%20Irlandi%20y%20Fernando,%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="boton-whatsapp">
 
-                Escribir a Fernando
+    <div class="whatsapp-botones">
 
-            </a>
 
-            <a
-                href="https://wa.me/525514170828?text=Hola%20Irlandi%20y%20Fernando,%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="boton-whatsapp">
+        <a
+            href="https://wa.me/525534325116?text=Hola%20Fernando%2C%20estoy%20viendo%20su%20invitaci%C3%B3n%20de%20boda%20y%20quer%C3%ADa%20hacerles%20un%20comentario%20especial."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-whatsapp">
 
-                Escribir a Irlandi
+            <span class="whatsapp-icono">
+                ♡
+            </span>
 
-            </a>
+            Escribir a Fernando
 
-        </div>
+        </a>
+
+
+        <a
+            href="https://wa.me/525514170828?text=Hola%20Irlandi%2C%20estoy%20viendo%20su%20invitaci%C3%B3n%20de%20boda%20y%20quer%C3%ADa%20hacerles%20un%20comentario%20especial."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-whatsapp">
+
+            <span class="whatsapp-icono">
+                ♡
+            </span>
+
+            Escribir a Irlandi
+
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      CONFIRMACION
-========================= -->
+===================================================== -->
 
-<section>
+<section class="reveal">
 
     <div class="subtitulo">
         Queremos contar contigo
@@ -1688,6 +2704,7 @@ footer p {
     <h2 class="titulo">
         Confirmación de asistencia
     </h2>
+
 
     <div class="confirmacion">
 
@@ -1702,6 +2719,7 @@ footer p {
             Por favor, confirma tu asistencia
             mediante nuestro formulario.
         </p>
+
 
         <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfR_J_tOqwMNImpd1_GAFmMZ9J5i9Sgsucf1fax0Rb8Gr0-zg/viewform?usp=dialog"
@@ -1718,9 +2736,9 @@ footer p {
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -1742,15 +2760,16 @@ footer p {
 </footer>
 
 
-<!-- =========================
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
-/* =========================
+
+/* =====================================================
    MUSICA
-========================= */
+===================================================== */
 
 const musica =
     document.getElementById("musica");
@@ -1758,29 +2777,36 @@ const musica =
 const abrirInvitacion =
     document.getElementById("abrirInvitacion");
 
-abrirInvitacion.addEventListener("click", function() {
 
-    musica.volume = 0.35;
+abrirInvitacion.addEventListener(
+    "click",
+    function() {
 
-    musica.play()
-        .catch(function(error) {
+        musica.volume = 0.35;
 
-            console.log(
-                "La reproducción fue bloqueada:",
-                error
-            );
+        musica.play()
+            .catch(function(error) {
 
-        });
+                console.log(
+                    "La reproducción fue bloqueada:",
+                    error
+                );
 
-});
+            });
+
+    }
+);
 
 
-/* =========================
+/* =====================================================
    CONTADOR
-========================= */
+===================================================== */
 
 const fechaBoda =
-    new Date("December 5, 2026 16:00:00").getTime();
+    new Date(
+        "December 5, 2026 16:00:00"
+    ).getTime();
+
 
 function actualizarContador() {
 
@@ -1790,15 +2816,24 @@ function actualizarContador() {
     const diferencia =
         fechaBoda - ahora;
 
+
     if (diferencia <= 0) {
 
-        document.getElementById("dias").textContent = "0";
-        document.getElementById("horas").textContent = "0";
-        document.getElementById("minutos").textContent = "0";
-        document.getElementById("segundos").textContent = "0";
+        document.getElementById("dias")
+            .textContent = "0";
+
+        document.getElementById("horas")
+            .textContent = "0";
+
+        document.getElementById("minutos")
+            .textContent = "0";
+
+        document.getElementById("segundos")
+            .textContent = "0";
 
         return;
     }
+
 
     const dias =
         Math.floor(
@@ -1806,11 +2841,13 @@ function actualizarContador() {
             (1000 * 60 * 60 * 24)
         );
 
+
     const horas =
         Math.floor(
             (diferencia /
             (1000 * 60 * 60)) % 24
         );
+
 
     const minutos =
         Math.floor(
@@ -1818,23 +2855,27 @@ function actualizarContador() {
             (1000 * 60)) % 60
         );
 
+
     const segundos =
         Math.floor(
             (diferencia / 1000) % 60
         );
 
-    document.getElementById("dias").textContent =
-        dias;
 
-    document.getElementById("horas").textContent =
-        horas;
+    document.getElementById("dias")
+        .textContent = dias;
 
-    document.getElementById("minutos").textContent =
-        minutos;
+    document.getElementById("horas")
+        .textContent = horas;
 
-    document.getElementById("segundos").textContent =
-        segundos;
+    document.getElementById("minutos")
+        .textContent = minutos;
+
+    document.getElementById("segundos")
+        .textContent = segundos;
+
 }
+
 
 actualizarContador();
 
@@ -1842,6 +2883,110 @@ setInterval(
     actualizarContador,
     1000
 );
+
+
+/* =====================================================
+   SOBRES INTERACTIVOS
+===================================================== */
+
+const sobres =
+    document.querySelectorAll(
+        ".sobre-padrino"
+    );
+
+
+sobres.forEach(function(sobre) {
+
+
+    sobre.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target.classList
+                    .contains("cerrar-sobre")
+            ) {
+
+                sobre.classList
+                    .remove("abierto");
+
+                return;
+            }
+
+            sobre.classList
+                .toggle("abierto");
+
+        }
+    );
+
+
+    sobre.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                sobre.classList
+                    .toggle("abierto");
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   ANIMACIONES AL HACER SCROLL
+===================================================== */
+
+const elementosReveal =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observador =
+    new IntersectionObserver(
+        function(entradas) {
+
+            entradas.forEach(
+                function(entrada) {
+
+                    if (
+                        entrada.isIntersecting
+                    ) {
+
+                        entrada.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+elementosReveal.forEach(
+    function(elemento) {
+
+        observador.observe(elemento);
+
+    }
+);
+
 
 </script>
 
