@@ -63,6 +63,7 @@ a {
     text-decoration: none;
 }
 
+
 /* =========================
    MUSICA
 ========================= */
@@ -749,6 +750,101 @@ section {
 
 
 /* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    background:
+        linear-gradient(
+            135deg,
+            var(--beige-light),
+            var(--crema)
+        );
+
+    padding: 55px 30px;
+
+    margin-top: 35px;
+
+    border: 1px solid var(--beige);
+
+    border-top: 5px solid var(--olivo);
+
+    box-shadow:
+        0 10px 30px rgba(58,44,36,.08);
+}
+
+.whatsapp p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-family: "Lora", serif;
+
+    color: var(--cafe-light);
+
+    font-size: 17px;
+}
+
+.whatsapp-botones {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.boton-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 15px 28px;
+
+    background: var(--olivo);
+
+    color: white;
+
+    border: 1px solid var(--olivo-dark);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 8px 20px rgba(82,90,61,.18);
+
+    transition: .3s;
+}
+
+.boton-whatsapp:hover {
+    background: var(--olivo-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(82,90,61,.25);
+}
+
+.whatsapp-icono {
+    font-size: 17px;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -858,6 +954,15 @@ footer p {
         padding: 15px 25px;
         font-size: 10px;
         letter-spacing: 2px;
+    }
+
+    .whatsapp {
+        padding: 40px 22px;
+    }
+
+    .boton-whatsapp {
+        width: 100%;
+        max-width: 320px;
     }
 
 }
@@ -1606,6 +1711,66 @@ footer p {
 </section>
 
 
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<section>
+
+    <div class="subtitulo">
+        Estamos para escucharte
+    </div>
+
+    <h2 class="titulo">
+        ¿Tienes algo que decirnos?
+    </h2>
+
+    <div class="whatsapp">
+
+        <p>
+            Si tienes algún comentario especial
+            que quieras hacernos llegar,
+            escríbenos por WhatsApp.
+        </p>
+
+        <div class="whatsapp-botones">
+
+            <a
+                href="https://wa.me/525534325116?text=Hola%2C%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda.%20%F0%9F%92%8D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-whatsapp">
+
+                <span class="whatsapp-icono">
+                    ✆
+                </span>
+
+                Escribir a Fernando
+
+            </a>
+
+
+            <a
+                href="https://wa.me/525514170828?text=Hola%2C%20tengo%20un%20comentario%20especial%20que%20quiero%20hacerles%20llegar%20sobre%20su%20boda.%20%F0%9F%92%8D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-whatsapp">
+
+                <span class="whatsapp-icono">
+                    ✆
+                </span>
+
+                Escribir a Irlandi
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- FOOTER -->
 
 <footer>
@@ -1633,6 +1798,7 @@ footer p {
 ========================= -->
 
 <script>
+
 
 /* =========================
    MUSICA DE FONDO
@@ -1742,6 +1908,7 @@ setInterval(
     actualizarContador,
     1000
 );
+
 
 </script>
 
