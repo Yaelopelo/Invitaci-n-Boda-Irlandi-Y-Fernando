@@ -10,18 +10,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
     --terracota: #B65F4A;
-    --terracota-oscuro: #914735;
-    --olivo: #6F7650;
-    --olivo-oscuro: #555C3D;
-    --crema: #F5F0E6;
-    --beige: #E8DFCF;
-    --cafe: #302820;
+    --terracota-dark: #914735;
+    --terracota-light: #C9826E;
+
+    --olivo: #707852;
+    --olivo-dark: #525A3D;
+    --olivo-light: #8A916B;
+
+    --crema: #F7F1E6;
+    --beige: #E9DDCB;
+    --beige-light: #F1E8DA;
+
+    --cafe: #3A2C24;
+    --cafe-light: #675247;
+
     --blanco: #FFFFFF;
 }
 
@@ -36,25 +44,26 @@ html {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
     background: var(--crema);
     color: var(--cafe);
-    line-height: 1.7;
+    line-height: 1.8;
+}
+
+p {
+    font-family: "Lora", serif;
+    font-size: 15px;
+    color: var(--cafe-light);
+}
+
+strong {
+    color: var(--terracota-dark);
 }
 
 a {
     text-decoration: none;
 }
 
-p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-/* =========================
-   PORTADA
-========================= */
+/* PORTADA */
 
 .portada {
     min-height: 100vh;
@@ -69,51 +78,54 @@ p {
 
     background:
         linear-gradient(
-            rgba(48,40,32,.42),
-            rgba(48,40,32,.55)
+            rgba(58,44,36,.35),
+            rgba(58,44,36,.58)
         ),
         url("foto1.jpg") center/cover no-repeat;
 
-    color: var(--blanco);
+    color: white;
 }
 
-.portada::after {
+.portada::before {
     content: "";
     position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(255,255,255,.65);
+    inset: 22px;
+    border: 1px solid rgba(255,255,255,.75);
 }
 
 .portada-contenido {
     position: relative;
     z-index: 2;
-    animation: aparecer 1.5s ease;
+    animation: aparecer 1.4s ease;
 }
 
 .portada .pequeno {
     font-family: "Montserrat", sans-serif;
-    font-size: 13px;
-    letter-spacing: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 6px;
     text-transform: uppercase;
 }
 
 .portada h1 {
     font-family: "Great Vibes", cursive;
-    font-size: 82px;
+    font-size: 90px;
     font-weight: 400;
-    margin: 18px 0;
+    line-height: 1.1;
 }
 
 .portada .fecha {
     font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
-    letter-spacing: 4px;
+    font-size: 26px;
+    letter-spacing: 6px;
+    margin-top: 15px;
 }
 
 .boton {
     display: inline-block;
-    margin-top: 35px;
-    padding: 14px 32px;
+
+    margin-top: 38px;
+    padding: 14px 34px;
 
     background: var(--terracota);
     color: white;
@@ -121,50 +133,74 @@ p {
     border: 1px solid rgba(255,255,255,.8);
 
     font-family: "Montserrat", sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* =========================
-   SECCIONES
-========================= */
+/* SECCIONES */
 
 section {
     max-width: 950px;
     margin: auto;
-    padding: 85px 25px;
+    padding: 90px 25px;
     text-align: center;
-}
-
-.titulo {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--olivo-oscuro);
-    font-size: 43px;
-    font-weight: 500;
-    margin-bottom: 18px;
 }
 
 .subtitulo {
     font-family: "Montserrat", sans-serif;
+
     color: var(--terracota);
-    letter-spacing: 3px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
     text-transform: uppercase;
-    font-size: 11px;
+
+    margin-bottom: 12px;
+}
+
+.titulo {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--olivo-dark);
+
+    font-size: 49px;
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    margin-bottom: 22px;
 }
 
 .adorno {
     color: var(--terracota);
-    font-size: 27px;
-    margin: 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
-/* =========================
-   FOTOGRAFÍAS
-========================= */
+.titulo::after {
+    content: "❧";
+
+    display: block;
+
+    color: var(--terracota);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    margin-top: 12px;
+}
+
+/* FOTOGRAFIAS */
 
 .foto-separadora {
     height: 55vh;
-    min-height: 350px;
+    min-height: 360px;
 
     max-width: none;
     padding: 0;
@@ -173,18 +209,24 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .foto-separadora::before {
     content: "";
+
     position: absolute;
     inset: 0;
-    background: rgba(48,40,32,.30);
+
+    background:
+        linear-gradient(
+            rgba(58,44,36,.20),
+            rgba(58,44,36,.42)
+        );
 }
 
 .foto-texto {
@@ -193,76 +235,90 @@ section {
 
     color: white;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 37px;
-    letter-spacing: 2px;
+    font-family: "Great Vibes", cursive;
 
-    padding: 20px 30px;
+    font-size: 54px;
 
-    border: 1px solid rgba(255,255,255,.7);
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.35);
+
+    padding: 20px 35px;
+
+    border-top: 1px solid rgba(255,255,255,.7);
+    border-bottom: 1px solid rgba(255,255,255,.7);
 }
 
-/* =========================
-   CONTADOR
-========================= */
+/* CONTADOR */
 
 .contador {
     display: flex;
     justify-content: center;
-    gap: 18px;
+
+    gap: 16px;
+
     flex-wrap: wrap;
-    margin-top: 40px;
+
+    margin-top: 45px;
 }
 
 .contador div {
     background: white;
-    border-top: 3px solid var(--terracota);
-    padding: 20px 25px;
-    min-width: 100px;
 
-    box-shadow: 0 6px 20px rgba(48,40,32,.08);
+    min-width: 105px;
+
+    padding: 21px 18px;
+
+    border-top: 3px solid var(--terracota);
+
+    box-shadow:
+        0 8px 25px rgba(58,44,36,.07);
 }
 
 .contador span {
     display: block;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 38px;
+    font-family: "Playfair Display", serif;
 
-    color: var(--olivo-oscuro);
+    color: var(--olivo-dark);
+
+    font-size: 34px;
 }
 
 .contador small {
     font-family: "Montserrat", sans-serif;
+
     color: var(--terracota);
 
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
-/* =========================
-   TARJETAS GENERALES
-========================= */
+/* TARJETAS */
 
 .tarjeta {
     background: white;
 
-    margin-top: 35px;
-    padding: 40px;
+    margin-top: 28px;
+
+    padding: 42px 30px;
 
     border-top: 4px solid var(--terracota);
 
-    box-shadow: 0 8px 25px rgba(48,40,32,.09);
+    box-shadow:
+        0 10px 28px rgba(58,44,36,.07);
 }
 
 .tarjeta h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Playfair Display", serif;
 
-    color: var(--terracota);
+    color: var(--terracota-dark);
 
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 27px;
+
+    font-style: italic;
 
     margin-bottom: 10px;
 }
@@ -270,58 +326,73 @@ section {
 .hora {
     font-family: "Cormorant Garamond", serif;
 
-    color: var(--olivo-oscuro);
+    color: var(--olivo-dark);
 
-    font-size: 28px;
+    font-size: 34px;
+
+    letter-spacing: 2px;
 }
-
-/* =========================
-   BOTÓN OLIVO
-========================= */
 
 .boton-olivo {
     display: inline-block;
 
-    margin-top: 25px;
-    padding: 13px 28px;
+    margin-top: 24px;
+
+    padding: 12px 27px;
 
     background: var(--olivo);
+
     color: white;
 
     font-family: "Montserrat", sans-serif;
-    font-size: 11px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
     letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-/* =========================
-   RECEPCIÓN
-========================= */
+/* RECEPCION */
 
 .seccion-olivo {
     max-width: none;
 
-    background: var(--olivo);
+    background:
+        linear-gradient(
+            135deg,
+            var(--olivo-dark),
+            var(--olivo)
+        );
+
     color: white;
 
-    padding: 90px 25px;
-
-    text-align: center;
-}
-
-.seccion-olivo .titulo {
-    color: white;
+    padding: 95px 25px;
 }
 
 .seccion-olivo .subtitulo {
     color: var(--beige);
 }
 
-/* =========================
-   PADRES
-========================= */
+.seccion-olivo .titulo {
+    color: white;
+}
+
+.seccion-olivo p {
+    color: var(--beige-light);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+/* PADRES */
 
 .familia {
     display: grid;
+
     grid-template-columns: repeat(2,1fr);
 
     gap: 25px;
@@ -331,41 +402,42 @@ section {
 
 .familia .tarjeta {
     margin-top: 0;
+    background: var(--beige-light);
 }
 
 .familia .tarjeta p {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 23px;
+    font-family: "Playfair Display", serif;
+
+    color: var(--cafe);
+
+    font-size: 21px;
+
+    line-height: 1.5;
 }
 
-/* =================================================
-   CORTEJO
-   TODAS LAS PERSONAS TIENEN LA MISMA TARJETA
-================================================= */
+/* CORTEJO */
 
 .padrinos {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
 
     gap: 22px;
 
     margin-top: 45px;
-
-    width: 100%;
 }
 
 .padrino {
     background: white;
 
-    padding: 30px 25px;
+    padding: 32px 25px;
 
-    border-left: 4px solid var(--olivo);
+    min-height: 175px;
+
+    border-left: 4px solid var(--terracota);
 
     box-shadow:
-        0 6px 20px rgba(48,40,32,.08);
-
-    min-height: 170px;
+        0 8px 24px rgba(58,44,36,.07);
 
     display: flex;
 
@@ -381,37 +453,36 @@ section {
 }
 
 .padrino:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px rgba(48,40,32,.12);
+    transform: translateY(-4px);
 }
 
 .padrino h3 {
     font-family: "Cormorant Garamond", serif;
 
-    color: var(--terracota);
+    color: var(--terracota-dark);
 
-    font-size: 23px;
+    font-size: 25px;
 
     font-weight: 600;
 
-    margin-bottom: 13px;
+    font-style: italic;
+
+    line-height: 1.2;
+
+    margin-bottom: 14px;
 }
 
 .padrino p {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Playfair Display", serif;
 
     color: var(--cafe);
 
-    font-size: 20px;
+    font-size: 19px;
 
-    line-height: 1.35;
+    line-height: 1.45;
 }
 
-/* =========================
-   HOTELES
-========================= */
+/* HOTELES */
 
 .hoteles {
     display: grid;
@@ -424,19 +495,20 @@ section {
 }
 
 .hotel {
-    background: white;
+    background: var(--beige-light);
 
-    padding: 32px 20px;
+    padding: 35px 20px;
 
     border-top: 4px solid var(--olivo);
 
-    box-shadow: 0 6px 20px rgba(48,40,32,.08);
+    box-shadow:
+        0 7px 22px rgba(58,44,36,.06);
 }
 
 .hotel h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Playfair Display", serif;
 
-    color: var(--terracota);
+    color: var(--terracota-dark);
 
     font-size: 25px;
 }
@@ -444,51 +516,60 @@ section {
 .hotel-boton {
     display: inline-block;
 
-    margin-top: 20px;
+    margin-top: 22px;
 
-    padding: 10px 18px;
+    padding: 11px 20px;
 
     background: var(--olivo);
+
     color: white;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-/* =========================
-   VESTIMENTA
-========================= */
+/* VESTIMENTA */
 
 .vestimenta {
     background: var(--beige);
 
-    padding: 45px;
+    padding: 48px 35px;
 
     margin-top: 35px;
+
+    border-left: 5px solid var(--terracota);
 }
 
 .vestimenta h3 {
     font-family: "Cormorant Garamond", serif;
 
-    color: var(--olivo-oscuro);
+    color: var(--olivo-dark);
 
-    font-size: 30px;
+    font-size: 32px;
+
+    font-weight: 500;
 }
 
-/* =========================
-   LLUVIA DE SOBRES
-========================= */
+/* SOBRES */
 
 .lluvia {
     background: white;
 
-    padding: 45px;
+    padding: 48px 35px;
 
     margin-top: 35px;
 
     border: 1px solid var(--beige);
+
+    box-shadow:
+        0 8px 25px rgba(58,44,36,.06);
 }
 
 .lluvia .sobre {
@@ -499,14 +580,18 @@ section {
     margin-bottom: 15px;
 }
 
-/* =========================
-   PENDIENTES
-========================= */
+.lluvia strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+}
+
+/* PENDIENTES */
 
 .pendiente {
-    background: var(--beige);
+    background: var(--beige-light);
 
-    padding: 35px;
+    padding: 38px;
 
     margin-top: 30px;
 
@@ -514,16 +599,16 @@ section {
 }
 
 .pendiente strong {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 25px;
+    font-family: "Great Vibes", cursive;
 
     color: var(--terracota);
+
+    font-size: 38px;
+
+    font-weight: 400;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     background: var(--cafe);
@@ -532,34 +617,34 @@ footer {
 
     text-align: center;
 
-    padding: 75px 25px;
+    padding: 80px 25px;
 }
 
 footer .nombres {
     font-family: "Great Vibes", cursive;
 
-    color: var(--terracota);
+    color: var(--terracota-light);
 
-    font-size: 55px;
+    font-size: 65px;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 footer p {
+    color: var(--beige-light);
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 20px;
+    font-size: 22px;
 }
 
-/* =========================
-   ANIMACIÓN
-========================= */
+/* ANIMACION */
 
 @keyframes aparecer {
 
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
     }
 
     to {
@@ -569,22 +654,25 @@ footer p {
 
 }
 
-/* =========================
-   CELULAR
-========================= */
+/* CELULAR */
 
 @media (max-width:700px) {
 
     .portada h1 {
-        font-size: 58px;
+        font-size: 62px;
     }
 
     .portada .fecha {
         font-size: 20px;
+        letter-spacing: 4px;
     }
 
     .titulo {
-        font-size: 36px;
+        font-size: 40px;
+    }
+
+    .foto-texto {
+        font-size: 43px;
     }
 
     .familia,
@@ -594,41 +682,24 @@ footer p {
     }
 
     .contador {
-        gap: 10px;
+        gap: 9px;
     }
 
     .contador div {
         min-width: 72px;
-        padding: 15px;
+        padding: 15px 10px;
     }
 
     .contador span {
-        font-size: 30px;
-    }
-
-    .tarjeta {
-        padding: 30px 20px;
-    }
-
-    .foto-separadora {
-        height: 48vh;
-        min-height: 300px;
-    }
-
-    .foto-texto {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     .padrino {
-        min-height: 160px;
+        min-height: 165px;
     }
 
-    .padrino h3 {
-        font-size: 24px;
-    }
-
-    .padrino p {
-        font-size: 21px;
+    footer .nombres {
+        font-size: 55px;
     }
 
 }
@@ -639,11 +710,7 @@ footer p {
 
 <body>
 
-
-<!-- ======================================
-     PORTADA
-     FOTO 1 = FOTO DE LOS NOVIOS
-====================================== -->
+<!-- PORTADA -->
 
 <header class="portada">
 
@@ -662,7 +729,7 @@ footer p {
         </div>
 
         <a href="#invitacion" class="boton">
-            ABRIR INVITACIÓN
+            Abrir invitación
         </a>
 
     </div>
@@ -670,13 +737,13 @@ footer p {
 </header>
 
 
-<!-- ======================================
-     INTRODUCCIÓN
-====================================== -->
+<!-- INTRODUCCION -->
 
 <section id="invitacion">
 
-    <div class="adorno">✦</div>
+    <div class="adorno">
+        ✦
+    </div>
 
     <div class="subtitulo">
         Con mucha alegría
@@ -746,7 +813,7 @@ footer p {
 </section>
 
 
-<!-- EVENTO -->
+<!-- CEREMONIA -->
 
 <section>
 
@@ -770,7 +837,6 @@ footer p {
 
     </div>
 
-
     <div class="tarjeta">
 
         <h3>
@@ -790,7 +856,7 @@ footer p {
             target="_blank"
             class="boton-olivo">
 
-            VER UBICACIÓN
+            Ver ubicación
 
         </a>
 
@@ -812,7 +878,7 @@ footer p {
 </section>
 
 
-<!-- RECEPCIÓN -->
+<!-- RECEPCION -->
 
 <section class="seccion-olivo">
 
@@ -878,7 +944,6 @@ footer p {
 
         </div>
 
-
         <div class="tarjeta">
 
             <h3>
@@ -900,9 +965,7 @@ footer p {
 </section>
 
 
-<!-- ======================================
-     CORTEJO
-====================================== -->
+<!-- CORTEJO -->
 
 <section>
 
@@ -915,15 +978,12 @@ footer p {
     </h2>
 
     <p>
-        Cada una de estas personas ocupa un lugar
-        especial en nuestra celebración.
+        Cada una de estas personas ocupa un lugar especial
+        en nuestra celebración.
     </p>
-
 
     <div class="padrinos">
 
-
-        <!-- 1 -->
 
         <div class="padrino">
 
@@ -942,8 +1002,6 @@ footer p {
         </div>
 
 
-        <!-- 2 -->
-
         <div class="padrino">
 
             <h3>
@@ -956,8 +1014,6 @@ footer p {
 
         </div>
 
-
-        <!-- 3 -->
 
         <div class="padrino">
 
@@ -976,8 +1032,6 @@ footer p {
         </div>
 
 
-        <!-- 4 -->
-
         <div class="padrino">
 
             <h3>
@@ -995,8 +1049,6 @@ footer p {
         </div>
 
 
-        <!-- 5 -->
-
         <div class="padrino">
 
             <h3>
@@ -1010,12 +1062,10 @@ footer p {
         </div>
 
 
-        <!-- 6 -->
-
         <div class="padrino">
 
             <h3>
-                Padrinos de Medalla
+                Padrinos de medalla
             </h3>
 
             <p>
@@ -1028,8 +1078,6 @@ footer p {
 
         </div>
 
-
-        <!-- 7 -->
 
         <div class="padrino">
 
@@ -1048,8 +1096,6 @@ footer p {
         </div>
 
 
-        <!-- 8 -->
-
         <div class="padrino">
 
             <h3>
@@ -1063,8 +1109,6 @@ footer p {
         </div>
 
 
-        <!-- 9 -->
-
         <div class="padrino">
 
             <h3>
@@ -1077,8 +1121,6 @@ footer p {
 
         </div>
 
-
-        <!-- 10 -->
 
         <div class="padrino">
 
@@ -1097,8 +1139,6 @@ footer p {
         </div>
 
 
-        <!-- 11 -->
-
         <div class="padrino">
 
             <h3>
@@ -1116,8 +1156,6 @@ footer p {
         </div>
 
 
-        <!-- 12 -->
-
         <div class="padrino">
 
             <h3>
@@ -1131,8 +1169,6 @@ footer p {
         </div>
 
 
-        <!-- 13 -->
-
         <div class="padrino">
 
             <h3>
@@ -1144,7 +1180,6 @@ footer p {
             </p>
 
         </div>
-
 
     </div>
 
@@ -1181,9 +1216,7 @@ footer p {
         hemos seleccionado algunas opciones de hospedaje.
     </p>
 
-
     <div class="hoteles">
-
 
         <div class="hotel">
 
@@ -1196,7 +1229,7 @@ footer p {
                 target="_blank"
                 class="hotel-boton">
 
-                VER HOTEL
+                Ver hotel
 
             </a>
 
@@ -1214,7 +1247,7 @@ footer p {
                 target="_blank"
                 class="hotel-boton">
 
-                VER HOTEL
+                Ver hotel
 
             </a>
 
@@ -1232,12 +1265,11 @@ footer p {
                 target="_blank"
                 class="hotel-boton">
 
-                VER UBICACIÓN
+                Ver ubicación
 
             </a>
 
         </div>
-
 
     </div>
 
@@ -1255,7 +1287,6 @@ footer p {
     <h2 class="titulo">
         De etiqueta en jardín
     </h2>
-
 
     <div class="vestimenta">
 
@@ -1289,7 +1320,6 @@ footer p {
     <h2 class="titulo">
         Lluvia de sobres
     </h2>
-
 
     <div class="lluvia">
 
@@ -1338,7 +1368,7 @@ footer p {
 </section>
 
 
-<!-- ÁLBUM -->
+<!-- ALBUM -->
 
 <section>
 
@@ -1349,7 +1379,6 @@ footer p {
     <h2 class="titulo">
         Álbum de invitados
     </h2>
-
 
     <div class="pendiente">
 
@@ -1369,7 +1398,7 @@ footer p {
 </section>
 
 
-<!-- CONFIRMACIÓN -->
+<!-- CONFIRMACION -->
 
 <section>
 
@@ -1380,7 +1409,6 @@ footer p {
     <h2 class="titulo">
         Confirmación de asistencia
     </h2>
-
 
     <div class="pendiente">
 
@@ -1400,7 +1428,7 @@ footer p {
 </section>
 
 
-<!-- CIERRE -->
+<!-- FOOTER -->
 
 <footer>
 
