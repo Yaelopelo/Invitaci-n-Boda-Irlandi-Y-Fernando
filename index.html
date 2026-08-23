@@ -63,9 +63,7 @@ a {
     text-decoration: none;
 }
 
-/* =========================
-   PORTADA
-========================= */
+/* PORTADA */
 
 .portada {
     min-height: 100vh;
@@ -148,9 +146,7 @@ a {
     transform: translateY(-2px);
 }
 
-/* =========================
-   SECCIONES
-========================= */
+/* SECCIONES */
 
 section {
     max-width: 950px;
@@ -207,9 +203,7 @@ section {
     margin-top: 12px;
 }
 
-/* =========================
-   FOTOGRAFÍAS
-========================= */
+/* FOTOGRAFIAS */
 
 .foto-separadora {
     height: 55vh;
@@ -261,9 +255,7 @@ section {
     border-bottom: 1px solid rgba(255,255,255,.7);
 }
 
-/* =========================
-   CONTADOR
-========================= */
+/* CONTADOR */
 
 .contador {
     display: flex;
@@ -311,9 +303,7 @@ section {
     text-transform: uppercase;
 }
 
-/* =========================
-   TARJETAS
-========================= */
+/* TARJETAS */
 
 .tarjeta {
     background: white;
@@ -379,9 +369,7 @@ section {
     transform: translateY(-2px);
 }
 
-/* =========================
-   RECEPCIÓN
-========================= */
+/* RECEPCION */
 
 .seccion-olivo {
     max-width: none;
@@ -414,9 +402,7 @@ section {
     font-size: 25px;
 }
 
-/* =========================
-   PADRES
-========================= */
+/* PADRES */
 
 .familia {
     display: grid;
@@ -443,9 +429,7 @@ section {
     line-height: 1.5;
 }
 
-/* =========================
-   CORTEJO
-========================= */
+/* CORTEJO */
 
 .padrinos {
     display: grid;
@@ -512,9 +496,7 @@ section {
     line-height: 1.45;
 }
 
-/* =========================
-   HOTELES
-========================= */
+/* HOTELES */
 
 .hoteles {
     display: grid;
@@ -573,9 +555,7 @@ section {
     background: var(--olivo-dark);
 }
 
-/* =========================
-   VESTIMENTA
-========================= */
+/* VESTIMENTA */
 
 .vestimenta {
     background: var(--beige);
@@ -597,9 +577,7 @@ section {
     font-weight: 500;
 }
 
-/* =========================
-   LLUVIA DE SOBRES
-========================= */
+/* SOBRES */
 
 .lluvia {
     background: white;
@@ -628,9 +606,7 @@ section {
     font-size: 19px;
 }
 
-/* =========================
-   PENDIENTES
-========================= */
+/* PENDIENTES */
 
 .pendiente {
     background: var(--beige-light);
@@ -652,9 +628,7 @@ section {
     font-weight: 400;
 }
 
-/* =========================
-   CONFIRMACIÓN
-========================= */
+/* CONFIRMACION */
 
 .confirmacion {
     background:
@@ -668,9 +642,9 @@ section {
 
     margin-top: 35px;
 
-    border-top: 4px solid var(--terracota);
+    border: 1px solid var(--beige);
 
-    border-bottom: 1px solid var(--beige);
+    border-top: 5px solid var(--terracota);
 
     box-shadow:
         0 10px 30px rgba(58,44,36,.08);
@@ -678,7 +652,14 @@ section {
 
 .confirmacion p {
     max-width: 650px;
+
     margin: 0 auto;
+
+    font-family: "Lora", serif;
+
+    color: var(--cafe-light);
+
+    font-size: 17px;
 }
 
 .boton-confirmacion {
@@ -705,7 +686,7 @@ section {
     text-transform: uppercase;
 
     box-shadow:
-        0 8px 20px rgba(145,71,53,.22);
+        0 8px 20px rgba(145,71,53,.20);
 
     transition: .3s;
 }
@@ -714,11 +695,12 @@ section {
     background: var(--terracota-dark);
 
     transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(145,71,53,.25);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     background: var(--cafe);
@@ -748,9 +730,7 @@ footer p {
     font-size: 22px;
 }
 
-/* =========================
-   ANIMACIÓN
-========================= */
+/* ANIMACION */
 
 @keyframes aparecer {
 
@@ -766,9 +746,7 @@ footer p {
 
 }
 
-/* =========================
-   CELULAR
-========================= */
+/* CELULAR */
 
 @media (max-width:700px) {
 
@@ -816,9 +794,14 @@ footer p {
         font-size: 55px;
     }
 
+    .confirmacion {
+        padding: 40px 22px;
+    }
+
     .boton-confirmacion {
-        width: 90%;
-        padding: 15px 15px;
+        padding: 15px 25px;
+        font-size: 10px;
+        letter-spacing: 2px;
     }
 
 }
@@ -829,9 +812,7 @@ footer p {
 
 <body>
 
-<!-- =========================
-     PORTADA
-========================= -->
+<!-- PORTADA -->
 
 <header class="portada">
 
@@ -858,9 +839,7 @@ footer p {
 </header>
 
 
-<!-- =========================
-     INTRODUCCIÓN
-========================= -->
+<!-- INTRODUCCION -->
 
 <section id="invitacion">
 
@@ -897,9 +876,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     CONTADOR
-========================= -->
+<!-- CONTADOR -->
 
 <section>
 
@@ -938,9 +915,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     CEREMONIA
-========================= -->
+<!-- CEREMONIA -->
 
 <section>
 
@@ -1005,9 +980,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     RECEPCIÓN
-========================= -->
+<!-- RECEPCION -->
 
 <section class="seccion-olivo">
 
@@ -1043,9 +1016,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     PADRES
-========================= -->
+<!-- PADRES -->
 
 <section>
 
@@ -1096,9 +1067,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     CORTEJO
-========================= -->
+<!-- CORTEJO -->
 
 <section>
 
@@ -1133,9 +1102,6 @@ footer p {
 
         </div>
 
-
-        <!-- MADRINA DE ANILLOS -->
-
         <div class="padrino">
 
             <h3>
@@ -1147,7 +1113,6 @@ footer p {
             </p>
 
         </div>
-
 
         <div class="padrino">
 
@@ -1165,7 +1130,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1182,7 +1146,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1194,7 +1157,6 @@ footer p {
             </p>
 
         </div>
-
 
         <div class="padrino">
 
@@ -1212,7 +1174,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1229,7 +1190,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1242,7 +1202,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1254,7 +1213,6 @@ footer p {
             </p>
 
         </div>
-
 
         <div class="padrino">
 
@@ -1272,7 +1230,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1289,7 +1246,6 @@ footer p {
 
         </div>
 
-
         <div class="padrino">
 
             <h3>
@@ -1301,7 +1257,6 @@ footer p {
             </p>
 
         </div>
-
 
         <div class="padrino">
 
@@ -1333,9 +1288,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     HOTELES
-========================= -->
+<!-- HOTELES -->
 
 <section>
 
@@ -1371,7 +1324,6 @@ footer p {
 
         </div>
 
-
         <div class="hotel">
 
             <h3>
@@ -1388,7 +1340,6 @@ footer p {
             </a>
 
         </div>
-
 
         <div class="hotel">
 
@@ -1412,9 +1363,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     VESTIMENTA
-========================= -->
+<!-- VESTIMENTA -->
 
 <section>
 
@@ -1447,9 +1396,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     LLUVIA DE SOBRES
-========================= -->
+<!-- LLUVIA DE SOBRES -->
 
 <section>
 
@@ -1508,9 +1455,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     ÁLBUM
-========================= -->
+<!-- ALBUM -->
 
 <section>
 
@@ -1540,9 +1485,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     CONFIRMACIÓN
-========================= -->
+<!-- CONFIRMACION DE ASISTENCIA -->
 
 <section>
 
@@ -1557,16 +1500,24 @@ footer p {
     <div class="confirmacion">
 
         <p>
-            Para nosotros será un honor saber si podremos
-            contar contigo en este día tan especial.
+            Para nosotros será un honor compartir
+            este día tan especial contigo.
+        </p>
+
+        <br>
+
+        <p>
+            Por favor, confirma tu asistencia
+            mediante nuestro formulario.
         </p>
 
         <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfR_J_tOqwMNImpd1_GAFmMZ9J5i9Sgsucf1fax0Rb8Gr0-zg/viewform?usp=dialog"
             target="_blank"
+            rel="noopener noreferrer"
             class="boton-confirmacion">
 
-            💌 Confirmar mi asistencia
+            Confirmar asistencia
 
         </a>
 
@@ -1575,9 +1526,7 @@ footer p {
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1599,9 +1548,7 @@ footer p {
 </footer>
 
 
-<!-- =========================
-     CONTADOR
-========================= -->
+<!-- CONTADOR -->
 
 <script>
 
